@@ -1,0 +1,1 @@
+{"ts":1380130556223,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>My calendar</h1>\n<legend></legend>\n\n<%= raw event_calendar %>\n<br>\n"]],"start1":0,"start2":0,"length1":0,"length2":71}]],"length":71}

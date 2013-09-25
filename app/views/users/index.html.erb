@@ -1,0 +1,34 @@
+<h1>Listing users</h1>
+<% model_class = User.new.class %>
+<table>
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:username) %></th>
+      <th><%= model_class.human_attribute_name(:nickname) %></th>
+      <th><%= model_class.human_attribute_name(:provider) %></th>
+      <th><%= model_class.human_attribute_name(:sign_in_count) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.username, user.url %></td>
+        <td><%= user.nickname %></td>
+        <td><%= user.provider %></td>
+        <td><%= user.sign_in_count %></td>
+        <td><%= user.created_at %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', "" %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_registration_path %>
