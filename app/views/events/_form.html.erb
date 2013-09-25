@@ -8,22 +8,26 @@
           <%end%>
       </ul>
     </div>
-<%end%>
-
-  <div id="field">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
- </div>
-  <div id="field">
-		<%= f.label :start_at %>
-		<%= f.date_select :start_at %>
-	</div>
-  <div id="field">
-		<%= f.label :end_at %>
-		<%= f.date_select :end_at %>
-  </div>
-
-  <div id="field">
-  	<%= f.submit "Add event", class: "btn btn-success" %>
-  </div>
+<% end %>
+    
+    <div id="field">
+    	<%= f.label :name %>
+    	<%= f.text_field :name %>
+    </div>
+    <div id="field">
+    	<%= f.label :description %>
+    	<%= f.text_area :description %>
+    </div>
+    <div id="field">
+    	<%= f.label :start_at %>
+    	<%= f.date_select :start_at %>
+    </div>
+    <div id="field">
+    	<%= f.label :end_at %>
+    	<%= f.date_select :end_at %>
+    </div>
+    
+    <div id="field">
+      <%= f.submit "Add event", class: "btn btn-success" %>
+    </div>
 <%end%>

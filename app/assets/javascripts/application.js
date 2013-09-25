@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-@import "bootstrap.js";
-@import "bootstrap.min.js";
+//= require bootstrap
+
