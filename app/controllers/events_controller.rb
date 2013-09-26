@@ -16,10 +16,13 @@ class EventsController < ApplicationController
 
     p @event
     respond_to do |format|
-    if @event.save
+    if (@event.end_at >= @event.start_at) && @event.save 
       format.html { redirect_to calendar_path, notice: "Event was successfully created." }
       format.json { render action: 'show', status: :created, location: @event }
     else
+      if(@event.start_at && @event.end_at )
+         @event.errors.add(:start_at, "date must be less then End date.") if (@event.start_at >= @event.end_at) 
+      end
       format.html { render action: 'new' }
       format.json { render json: @event.errors, status: :unprocessable_entity }
     end

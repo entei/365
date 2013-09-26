@@ -20,9 +20,15 @@ class Event < ActiveRecord::Base
   has_event_calendar
   belongs_to :user
   validates :start_at, :end_at, :name, presence: true
-  
+#   before_save :time_value
   # event bg color
   def color
      self[:color] || '#9999FF'
   end
+  
+#   def time_value
+#     if self[:start_at] > self[:end_at]
+        
+#     end
+#   end
 end

@@ -180,6 +180,7 @@ background-color: red;
 }
 
 .ec-event-bg a {
+  font: italic 13px arial, sans-serif;
   color: black;
 }
 
