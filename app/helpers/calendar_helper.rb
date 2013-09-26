@@ -22,7 +22,7 @@ module CalendarHelper
       event = args[:event]
       p event
       p "=================================="
-      %(<a href="/events/#{event.id}" title="#{h(event.name)}">#{h(event.name)}</a>)
+      %(<a href="/events/#{event.id}" title="#{h(event.description)}">#{h(event.name)}</a>)
     end
   end
 end

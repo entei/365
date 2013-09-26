@@ -79,6 +79,7 @@ a:focus {
 
 a:hover,
 a:active {
+background-color: none;
   outline: 0;
 }
 

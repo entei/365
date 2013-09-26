@@ -3,5 +3,6 @@
 start: <%= @event.start_at %><br>
 end: <%= @event.end_at %>
 </br>
+<%= button_to "Delete", event_path(@event), method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-danger"%>
 <%= link_to "Edit event", edit_event_path(@event) %>
 <%= link_to "Back", :back %>

@@ -6,10 +6,7 @@ EventCAlendar::Application.routes.draw do
   #get "omniauth_callbacks/facebook"
   #get "omniauth_callbacks/vkontakte"
   
-  get "events/new"
-  get "events/create"
-  get "events/edit"
-  
+
   get 'profile' => 'users#show', as: 'profile'
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks" }
   resources :users, :only => [:index, :destroy]

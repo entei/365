@@ -19,4 +19,10 @@
 class Event < ActiveRecord::Base
   has_event_calendar
   belongs_to :user
+  validates :start_at, :end_at, :name, presence: true
+  
+  # event bg color
+  def color
+     self[:color] || '#9999FF'
+  end
 end

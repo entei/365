@@ -10,24 +10,50 @@
     </div>
 <% end %>
     
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.datepicker').datepicker({ format: 'yyyy-mm-dd', autoclose: true});
+        
+            $('#colorpicker').colorPicker({			
+              defaultColor: 0, // index of the default color (optional)
+              columns: 13,     // number of columns (optional)  
+              color: ['#FFA877', '#40E0D0', '#9ACD32', '#FF84A2', '#B0C4DE', '#9191FF', '#FF6347', '#FFEF3C', '#5CCCCC', '#B5FF18', '#E6399B', '#A13DD5', '#269926'], // list of colors (optional)
+              // click event - selected color is passed as arg.
+              click: function(color){$('.output').val(color);}
+            });
+        });
+    </script>
+
     <div id="field">
     	<%= f.label :name %>
     	<%= f.text_field :name %>
     </div>
+    
     <div id="field">
     	<%= f.label :description %>
-    	<%= f.text_area :description %>
-    </div>
-    <div id="field">
-    	<%= f.label :start_at %>
-    	<%= f.date_select :start_at %>
-    </div>
-    <div id="field">
-    	<%= f.label :end_at %>
-    	<%= f.date_select :end_at %>
+    	<%= f.text_area :description, cols: 20, rows: 10, placeholder: "Enter a description" %>
     </div>
     
     <div id="field">
+    	<%= f.label :start_at %>
+    	<%= f.text_field :start_at, class: "datepicker" %>
+    </div>
+    <div id="field">
+    	<%= f.label :end_at %>
+    	<%= f.text_field :end_at, class: "datepicker" %>
+    </div>
+    <div id="field">
+        <%= f.label :color %>
+        <%= f.hidden_field :color, class: "output" %>
+    </div> 
+    <div id="colorpicker" style="width: 220px;">
+        <div class="jColorSelect" style="width: 220px;">
+        </div>
+    </div>
+    
+    </br>
+    <div id="field">
       <%= f.submit "Add event", class: "btn btn-success" %>
     </div>
+    
 <%end%>
