@@ -33,10 +33,13 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
-      if @event.update(user_params)
+      if @event.update(event_params) && (@event.end_at >= @event.start_at)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
+        if(@event.start_at && @event.end_at )
+            @event.errors.add(:start_at, "date must be less then End date.") if (@event.start_at >= @event.end_at) 
+        end
         format.html { render action: 'edit' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
@@ -67,6 +70,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :start_at, :end_at, :user_id, :description, :color)
+      params.require(:event).permit(:name, :start_at, :end_at, :user_id, :description, :color, :important)
     end
 end

@@ -26,6 +26,15 @@ class Event < ActiveRecord::Base
      self[:color] || '#9999FF'
   end
   
+  def self.today_events(user)
+      today = Date.today
+      Event.where("start_at <= ? AND end_at >= ? AND user_id = ?", today, today, user.id)
+  end
+  
+  def self.events_left(user)
+    cur_time = Time.now
+    Event.where("end_at > ? AND user_id =? ", cur_time, user.id)
+  end
 #   def time_value
 #     if self[:start_at] > self[:end_at]
         

@@ -42,14 +42,12 @@ end
 
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-sass'
-gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
-                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'bootstrap-datetimepicker-rails'
 
 gem "less-rails"
 gem "therubyracer"
 
 gem 'devise'
-
 
 # auth via social
 gem 'omniauth'

@@ -9,11 +9,15 @@
       </ul>
     </div>
 <% end %>
-    
+
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.datepicker').datepicker({ format: 'yyyy-mm-dd', autoclose: true});
-        
+            $('.datetimepicker').datetimepicker({ 
+                format: 'yyyy-mm-dd hh:ii',
+                autoclose: true,
+                todayBtn: true
+                });
+ 
             $('#colorpicker').colorPicker({			
               defaultColor: 0, // index of the default color (optional)
               columns: 13,     // number of columns (optional)  
@@ -23,6 +27,23 @@
             });
         });
     </script>
+    
+    
+    <script type="text/javascript">
+  $(function() {
+    $('#datetimepicker1').datetimepicker({
+      language: 'pt-BR',
+      format: 'yyyy-MM-dd hh:mm:ss'
+    });
+    $('#datetimepicker2').datetimepicker({
+      language: 'pt-BR',
+      format: 'yyyy-MM-dd hh:mm:ss'
+    });
+  });
+</script>
+
+
+
 
     <div id="field">
     	<%= f.label :name %>
@@ -30,18 +51,27 @@
     </div>
     
     <div id="field">
-    	<%= f.label :description %>
-    	<%= f.text_area :description, cols: 20, rows: 10, placeholder: "Enter a description" %>
+      <div id="datetimepicker1" class="input-append date">
+        	<%= f.label :start_at %>
+        	<%= f.text_field :start_at %>
+        <span class="add-on">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+          </i>
+        </span>
+      </div>
     </div>
     
     <div id="field">
-    	<%= f.label :start_at %>
-    	<%= f.text_field :start_at, class: "datepicker" %>
+      <div id="datetimepicker2" class="input-append date">
+        	<%= f.label :end_at %>
+        	<%= f.text_field :end_at %>
+        <span class="add-on">
+          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+          </i>
+        </span>
+      </div>
     </div>
-    <div id="field">
-    	<%= f.label :end_at %>
-    	<%= f.text_field :end_at, class: "datepicker" %>
-    </div>
+    
     <div id="field">
         <%= f.label :color %>
         <%= f.hidden_field :color, class: "output" %>
@@ -50,9 +80,18 @@
         <div class="jColorSelect" style="width: 220px;">
         </div>
     </div>
+    <div class="checkbox inline" id="field">
+        <%= f.check_box :important %><%= f.label :important %>      
+    </div></br>
+    <div id="field">
+    	<%= f.label :description %>
+    	<%= f.text_area :description, cols: 20, rows: 10, placeholder: "Enter a description" %>
+    </div>
+    
     
     </br>
-    <div id="field">
+    <div class="inline">
+      <%= link_to "Back", calendar_path , class: "btn" %>
       <%= f.submit "Add event", class: "btn btn-success" %>
     </div>
     
