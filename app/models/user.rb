@@ -46,4 +46,8 @@ class User < ActiveRecord::Base
    				:password => Devise.friendly_token[0,20]) 
    		end
    end      
+   
+    def upcmng_e
+        self.events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3)
+    end
 end

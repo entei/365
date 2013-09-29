@@ -104,7 +104,7 @@
                   <div class="well sidebar-nav">
                  
                     <h1><%= Time.current.strftime("%H:%M") %></h1>
-                    <h3><%= Date.current.strftime("%B %e")%></h3>
+                    <h4><%= Date.current.strftime("%B %e")%></h4>
                      
                     <ul>
                         <h5><li><%= pluralize(Event.events_left(current_user).count, "event") %> left</li></h5>
@@ -112,18 +112,16 @@
                     </ul>
                     <ul class="nav nav-list side">
                       <legend><li class="nav-header">Actions</li></legend>
-
                       <li><%= link_to "Add event", new_event_path %></li>
-                      <li><%= link_to "Today", "/path2"  %></li>
-                      <li><%= link_to "Link3", "/path3"  %></li>
+                      <li><%= link_to "Add sticker", "#"  %></li>
+                      
+                      <legend><li class="nav-header">Upcoming events</li></legend>
+                      <% current_user.upcmng_e.each do |e| %>
+                        <li><%= link_to "#{e.name}", e %></li>
+                      <% end %>
                     </ul>
                   </div><!--/.well -->
-                  <% if params[:controller]=="calendar" %>
-                    <div id="center">
-                        <%= link_to "Create new Event", new_event_path, class:
-                        "css3button" %>
-                    </div>
-                  <%end%>
+                
                 </div><!--/span-->
                 
                 
@@ -138,11 +136,11 @@
 </div>
 
 
-      <div id="footer">
-        <div class="container">
-          <p>&copy; Company 2013</p>
-        </div>
-      </div>
+  <div id="footer">
+    <div class="container">
+      <p>&copy; Company 2013</p>
+    </div>
+  </div>
 
     
 

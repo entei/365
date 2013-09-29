@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :update_sanitized_params, if: :devise_controller?
   around_filter :user_time_zone, :if => :current_user
-
+    
     private 
     
     def update_sanitized_params
