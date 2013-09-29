@@ -29,7 +29,8 @@ class Event < ActiveRecord::Base
   
   def self.today_events(user)
       today = Time.now.in_time_zone(user.timezone)
-      Event.where("start_at <= ? AND end_at >= ? AND user_id = ?", today, today, user.id)
+      end_of_today = Time.now.end_of_day.in_time_zone(user.timezone)
+      Event.where("end_at >= ? AND start_at < ? AND user_id = ?", today, end_of_today, user.id)
   end
   
   def self.events_left(user)

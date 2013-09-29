@@ -4,11 +4,13 @@
 <%= @event.end_at.strftime("End at: %e %B %Y %H:%M %z") %></br>
 
 <% if @event.description %>
-Description:
-<%= @event.description %></br>
+    Description:
+    <%= @event.description %></br>
 <% end %>
+
 <legend><%= button_to "Delete", @event, class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?"} %></legend>
+
 <div id="inline">
-<%= link_to "Edit event", edit_event_path(@event), class: "btn" %>
-<%= link_to "Back", :back, class: "btn" %>
+    <%= link_to "Edit event", edit_event_path(@event), class: "btn" %>
+    <%= link_to "Back", :back, class: "btn" %>
 </div>

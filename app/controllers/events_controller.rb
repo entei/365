@@ -28,6 +28,12 @@ class EventsController < ApplicationController
     end
   end
   end
+  
+  
+  def edit
+    @start_at = @event.start_at
+    @end_at = @event.end_at
+  end
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json

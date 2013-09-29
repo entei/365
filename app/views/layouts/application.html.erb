@@ -103,8 +103,9 @@
                 <div class="span3">
                   <div class="well sidebar-nav">
                  
+                    <h1><%= Time.current.strftime("%H:%M") %></h1>
                     <h3><%= Date.current.strftime("%B %e")%></h3>
-                     <h3><%= Time.current %></h3>
+                     
                     <ul>
                         <h5><li><%= pluralize(Event.events_left(current_user).count, "event") %> left</li></h5>
                         <h5><li><%= pluralize(Event.today_events(current_user).count, "event") %> today</li></h5>

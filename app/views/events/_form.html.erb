@@ -53,10 +53,12 @@
     <div id="field">
       <div id="datetimepicker1" class="input-append date">
         	<%= f.label :start_at %>
-        	<%= f.text_field :start_at, :value => f.object.start_at.in_time_zone(current_user.timezone) %>
+        	<%= f.text_field :start_at, :value => @start_at %>
         <span class="add-on">
           <i data-time-icon="icon-time" data-date-icon="icon-calendar">
           </i>
+          <i class="icon-search"></i>
+          <i class="icon-envelope"></i>
         </span>
       </div>
     </div>
@@ -64,7 +66,7 @@
     <div id="field">
       <div id="datetimepicker2" class="input-append date">
         	<%= f.label :end_at %>
-        	<%= f.text_field :end_at, :value => f.object.end_at.in_time_zone(current_user.timezone)%>
+        	<%= f.text_field :end_at, :value => @end_at %>
         <span class="add-on">
           <i data-time-icon="icon-time" data-date-icon="icon-calendar">
           </i>
@@ -92,7 +94,7 @@
     </br>
     <div class="inline">
       <%= link_to "Back", calendar_path , class: "btn" %>
-      <%= f.submit "Add event", class: "btn btn-success" %>
+      <%= f.submit class: "btn btn-primary" %>
     </div>
     
 <%end%>

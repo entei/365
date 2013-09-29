@@ -40,8 +40,7 @@ group :development do
   gem 'annotate'
 end
 
-gem 'twitter-bootstrap-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'bootstrap-datetimepicker-rails'
 
 gem "less-rails"
