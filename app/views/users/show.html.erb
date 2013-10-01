@@ -1,24 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<%= gravatar_for (current_user) %>
+    <p>
+        <h3>
+            <%= @user.username %>
+        </h3>
+    </p>
+    <p>
+      <strong>Provider:</strong>
+      <%= @user.provider %>
+    </p>
+    <p>
+      <strong>Url:</strong>
+      <%= @user.url %>
+    </p>
+    <p>
+     <i class="icon-calendar"></i><%= pluralize(events_count(current_user), "event") %>
+     <i class="icon-list-alt"></i>0 stickers
+    </p>
 
-<p>
-  <strong>Nickname:</strong>
-  <%= @user.nickname %>
-</p>
-
-<p>
-  <strong>Provider:</strong>
-  <%= @user.provider %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @user.url %>
-</p>
-
-<%= link_to 'Edit',edit_user_password_path %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Setting',edit_user_registration_path %> |
+<%= link_to 'Back', :back %>

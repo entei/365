@@ -6,3 +6,4 @@
 {"ts":1380458024364,"patch":[[{"diffs":[[0,"legend>\n"],[1,"<h1>My calendar</h1>\n"],[0,"<div cla"]],"start1":2,"start2":2,"length1":16,"length2":37},{"diffs":[[0,"ht\">"],[-1,"<h1>My calendar</h1>  "],[0,"<%= "]],"start1":58,"start2":58,"length1":30,"length2":8}]],"length":204,"saved":false}
 {"ts":1380458060458,"patch":[[{"diffs":[[-1,"\n<legend>"],[0,"\n<h1"]],"start1":0,"start2":0,"length1":13,"length2":4},{"diffs":[[0,"%></div>"],[1,"\n<legend>"],[0,"</legend"]],"start1":145,"start2":145,"length1":16,"length2":25}]],"length":204,"saved":false}
 {"ts":1380458114326,"patch":[[{"diffs":[[0,"ss=\""],[-1,"inline "],[0,"pull"]],"start1":30,"start2":30,"length1":15,"length2":8}]],"length":197,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1380562301483,"patch":[[{"diffs":[[0,"   \""],[-1,"css3button"],[1,"btn btn-primary"],[0,"\" %>"]],"start1":122,"start2":122,"length1":18,"length2":23}]],"length":202,"saved":false}

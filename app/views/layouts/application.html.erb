@@ -112,8 +112,8 @@
                     </ul>
                     <ul class="nav nav-list side">
                       <legend><li class="nav-header">Actions</li></legend>
-                      <li><%= link_to "Add event", new_event_path %></li>
-                      <li><%= link_to "Add sticker", "#"  %></li>
+                      <li><i class="icon-calendar"></i><%= link_to "Add event", new_event_path %></li>
+                      <li><i class="icon-list-alt"></i><%= link_to "Add sticker", "#"  %></li>
                       
                       <legend><li class="nav-header">Upcoming events</li></legend>
                       <% current_user.upcmng_e.each do |e| %>

@@ -14,7 +14,6 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.update_attributes(user_id: current_user.id)
 
-    p @event
     respond_to do |format|
     if (@event.end_at >= @event.start_at) && @event.save 
       format.html { redirect_to calendar_path, notice: "Event was successfully created." }
