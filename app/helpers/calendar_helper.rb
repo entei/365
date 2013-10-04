@@ -22,10 +22,7 @@ module CalendarHelper
     #   event = args[:event]
     #   %(<a href="/events/#{event.id}" title="#{(event.start_at)}\n#{h(event.end_at)}\n#{h(event.description)}">#{h(event.name)}</a>)
       event, day = args[:event], args[:day]
-      html = %(<a href="/events/#{event.id}" title="#{h(event.name)}\n#{h(event.start_at)}\n#{h(event.end_at)}\n#{h(event.description)}">)
-      html << display_event_time(event, day)
-      html << %(#{h(event.name)}</a>)
-      html
+      html = (link_to "#{event.start_at.strftime('%H:%M')} #{event.name}", {controller: "events", action: "show", id: event.id}, remote: true, id: event.id,  title: "#{h(event.name)}\n#{h(event.start_at)}\n#{h(event.end_at)}\n#{h(event.description)}")
     end
   end
 end

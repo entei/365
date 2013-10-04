@@ -12,8 +12,6 @@ EventCAlendar::Application.routes.draw do
   resources :users, :only => [:index, :destroy]
   root :to => 'static_pages#home'
   
-
- 
   resources :events
   get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get "/calendar/:year/:month/:day", :controller => "calendar", :action => "day"

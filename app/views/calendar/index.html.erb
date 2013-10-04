@@ -1,7 +1,11 @@
-
 <h1>My calendar</h1>
-<div class="pull-right"><%= link_to "Create new Event", new_event_path, class:
-                        "btn btn-primary" %></div>
+<div class="pull-right">
+    <%= link_to "Create new Event", new_event_path, class:
+    "btn btn-primary" %>
+</div>
 <legend></legend>
 <%= raw event_calendar %>
-<br>
+    <br>
+
+<div id="event_form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>

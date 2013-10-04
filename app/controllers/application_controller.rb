@@ -4,16 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   before_action :update_sanitized_params, if: :devise_controller?
-  before_action :end_events
   around_action :user_time_zone, :if => :current_user
     
     private 
-    
-    def end_events
-        current_user.events.each do |e|
-            e.change_color
-        end
-    end
     
     def update_sanitized_params
       devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:nickname, :username, :provider, :url, :email, :password, :timezone, :password_confirmation)}

@@ -1,7 +1,7 @@
 <legend><h3><%= @event.name %></h3></legend>
 
-<%= @event.start_at.strftime("Start at: %e %B %Y %H:%M %z") %><br>
-<%= @event.end_at.strftime("End at: %e %B %Y %H:%M %z") %></br>
+<%= @event.start_at.strftime("Start at: %e %B %Y %H:%M") %><br>
+<%= @event.end_at.strftime("End at: %e %B %Y %H:%M") %></br>
 
 <% if @event.description %>
     Description:

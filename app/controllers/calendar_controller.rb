@@ -34,4 +34,5 @@ class CalendarController < ApplicationController
     events = user.events.where('end_at < ?', Time.current)
     events.each { |e| e.update_attributes(color: '#D8D8D8') }
   end
+  
 end
