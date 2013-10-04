@@ -3,10 +3,17 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  before_filter :update_sanitized_params, if: :devise_controller?
-  around_filter :user_time_zone, :if => :current_user
+  before_action :update_sanitized_params, if: :devise_controller?
+  before_action :end_events
+  around_action :user_time_zone, :if => :current_user
     
     private 
+    
+    def end_events
+        current_user.events.each do |e|
+            e.change_color
+        end
+    end
     
     def update_sanitized_params
       devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:nickname, :username, :provider, :url, :email, :password, :timezone, :password_confirmation)}

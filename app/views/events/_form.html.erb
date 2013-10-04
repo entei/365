@@ -5,7 +5,7 @@
       <ul>
         <% @event.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
-          <%end%>
+          <% end %>
       </ul>
     </div>
 <% end %>
@@ -53,7 +53,7 @@
     <div id="field">
       <div id="datetimepicker1" class="input-append date">
         	<%= f.label :start_at %>
-        	<%= f.text_field :start_at, :value => @start_at %>
+        	<%= f.text_field :start_at, :value => @start_at, :readonly => true  %>
         <span class="add-on">
           <i data-time-icon="icon-time" data-date-icon="icon-calendar">
           </i>
@@ -64,7 +64,7 @@
     <div id="field">
       <div id="datetimepicker2" class="input-append date">
         	<%= f.label :end_at %>
-        	<%= f.text_field :end_at, :value => @end_at %>
+        	<%= f.text_field :end_at, :value => @end_at, :readonly => true %>
         <span class="add-on">
           <i data-time-icon="icon-time" data-date-icon="icon-calendar">
           </i>
@@ -85,7 +85,7 @@
     </div></br>
     <div id="field">
     	<%= f.label :description %>
-    	<%= f.text_area :description, cols: 20, rows: 10, placeholder: "Enter a description" %>
+    	<%= f.text_area :description, cols: 20, rows: 10, resize: false, placeholder: "Enter a description" %>
     </div>
     
     

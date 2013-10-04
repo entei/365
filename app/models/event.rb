@@ -20,11 +20,12 @@ class Event < ActiveRecord::Base
   has_event_calendar
   belongs_to :user
   validates :start_at, :end_at, :name, presence: true
-#   before_save :time_value
+  validates :description, length: {maximum: 140}
+# before_save :time_value
 
-  # event bg color
-  def color
-     self[:color] || '#9999FF'
+  # change event bg color
+  def change_color
+      self.color || 'rgb(12, 124, 231)'
   end
   
   def self.today_events(user)

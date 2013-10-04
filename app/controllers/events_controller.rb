@@ -1,21 +1,18 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!
-  before_filter :current_user, only: [:edit]
+  before_action :authenticate_user!
+  before_action :current_user, only: [:edit]
   
-  # GET /events/new
   def new
     @event = Event.new 
   end
 
-  # POST /events
-  # POST /events.json
   def create
     @event = Event.new(event_params)
     @event.update_attributes(user_id: current_user.id)
 
     respond_to do |format|
-    if (@event.end_at >= @event.start_at) && @event.save 
+    if @event.save && (@event.end_at >= @event.start_at)
       format.html { redirect_to calendar_path, notice: "Event was successfully created." }
       format.json { render action: 'show', status: :created, location: @event }
     else
@@ -28,14 +25,11 @@ class EventsController < ApplicationController
   end
   end
   
-  
   def edit
     @start_at = @event.start_at
     @end_at = @event.end_at
   end
 
-  # PATCH/PUT /events/1
-  # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
       if @event.update(event_params) && (@event.end_at >= @event.start_at)
@@ -51,13 +45,10 @@ class EventsController < ApplicationController
     end
   end
 
-  # show event 
   def show
     @user = current_user
   end
   
-  # DELETE /events/1
-  # DELETE /events/1.json
   def destroy
     @event.destroy
     respond_to do |format|

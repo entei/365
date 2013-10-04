@@ -17,6 +17,7 @@ EventCAlendar::Application.routes.draw do
   resources :events
   get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get "/calendar/:year/:month/:day", :controller => "calendar", :action => "day"
+  get "calendar/day", :controller => "calendar", :action => "day"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
