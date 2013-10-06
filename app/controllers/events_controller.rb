@@ -8,9 +8,8 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
-    @event.update_attributes(user_id: current_user.id)
-
+    @event = current_user.events.build(event_params)
+   
     respond_to do |format|
     if @event.save && (@event.end_at >= @event.start_at)
       format.html { redirect_to calendar_path, notice: "Event was successfully created." }
@@ -33,7 +32,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params) && (@event.end_at >= @event.start_at)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to calendar_path, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
         if(@event.start_at && @event.end_at )

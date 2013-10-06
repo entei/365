@@ -1,3 +1,4 @@
+<div class="form-signin">
 <%= form_for @event do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -21,7 +22,7 @@
             $('#colorpicker').colorPicker({			
               defaultColor: 0, // index of the default color (optional)
               columns: 13,     // number of columns (optional)  
-              color: ['#FFA877', '#40E0D0', '#9ACD32', '#FF84A2', '#B0C4DE', '#9191FF', '#FF6347', '#FFEF3C', '#5CCCCC', '#B5FF18', '#E6399B', '#A13DD5', '#269926'], // list of colors (optional)
+              color: ['#FFA877', '#40E0D0', '#9ACD32', '#FF84A2', '#B0C4DE', '#9191FF', '#FF6347', '#FFEF3C', '#5CCCCC', '#B5FF18', '#64C1FF', '#A13DD5', '#269926'], // list of colors (optional)
               // click event - selected color is passed as arg.
               click: function(color){$('.output').val(color);}
             });
@@ -96,3 +97,4 @@
     </div>
     
 <%end%>
+</div>

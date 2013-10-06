@@ -1,18 +1,3 @@
-/* 
-  Event Calendar stylesheet
-  
-  Colors:
-  #d5d5d5 - border (gray)
-  #303030 - day names bg (gray)
-  #444 - number (gray)
-  #ecede2 - day header bg (light tan)
-  ##d7d7ba - today header bg (tan)
-  #ffffdd - today bg light (yellow)
-  #777 - other month number (gray)
-  #efefef - other month day header (gray)
-  #2eac6a - hover (green)
-*/
-
 /* Outer most container */
 .ec-calendar {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -180,8 +165,8 @@ background-color: red;
 }
 
 .ec-event-bg a {
-  font: italic 13px arial, sans-serif;
-  color: black;
+  font: italic 12px arial, sans-serif;
+  color: rgb(58, 63, 65);
 }
 
 /* used to distinguish non-all_day events */

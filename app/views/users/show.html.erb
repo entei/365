@@ -15,8 +15,8 @@
       <%= @user.url %>
     </p>
     <p>
-     <i class="icon-calendar"></i><%= pluralize(events_count(current_user), "event") %>
-     <i class="icon-list-alt"></i>0 stickers
+     <i class="icon-calendar"></i> <%= pluralize(current_user.events.count, "event") %>
+     <i class="icon-list-alt"></i> 0 stickers
     </p>
 
 <%= link_to 'Setting',edit_user_registration_path %> |

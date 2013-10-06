@@ -26,8 +26,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
-  validates :username, :nickname, presence: true, uniqueness: true
-  validates :username, :nickname, length: {minimum: 4, maximum: 64}
+  validates :username, presence: true, uniqueness: true
+  validates :nickname, uniqueness: true
+  validates :username, length: {minimum: 4, maximum: 64}
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,  :omniauth_providers => [:facebook, :vkontakte]
@@ -46,8 +47,24 @@ class User < ActiveRecord::Base
    				:password => Devise.friendly_token[0,20]) 
    		end
    end      
-   
-    def upcmng_e
-        self.events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3)
-    end
+
+  
+  # Upcoming events
+   def upcmng_e
+     self.events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3)
+   end
+  
+  # Today events :)
+   def today_events
+     today = Time.current.in_time_zone(self.timezone)
+     end_of_today = Time.current.end_of_day.in_time_zone(self.timezone)
+     self.events.where("end_at >= ? AND start_at < ?", today, end_of_today)
+   end
+  
+  # Left events :)
+   def events_left
+     cur_time = Time.now.in_time_zone(self.timezone)
+     self.events.where("end_at > ?", cur_time)
+   end
+  
 end
