@@ -1,5 +1,5 @@
 
-    <legend><h2>Setting <%= resource_name.to_s.humanize %></h2></legend>
+    <legend><h1>Setting <%= resource_name.to_s.humanize %></h1></legend>
      <%= devise_error_messages! %>
     <div class="form-signin">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>

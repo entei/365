@@ -11,13 +11,10 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
    
     respond_to do |format|
-    if @event.save && (@event.end_at >= @event.start_at)
+    if @event.save 
       format.html { redirect_to calendar_path, notice: "Event was successfully created." }
       format.json { render action: 'show', status: :created, location: @event }
     else
-      if(@event.start_at && @event.end_at )
-         @event.errors.add(:start_at, "date must be less then End date.") if (@event.start_at >= @event.end_at) 
-      end
       format.html { render action: 'new' }
       format.json { render json: @event.errors, status: :unprocessable_entity }
     end
@@ -31,13 +28,10 @@ class EventsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @event.update(event_params) && (@event.end_at >= @event.start_at)
+      if @event.update(event_params)
         format.html { redirect_to calendar_path, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
-        if(@event.start_at && @event.end_at )
-            @event.errors.add(:start_at, "date must be less then End date.") if (@event.start_at >= @event.end_at) 
-        end
         format.html { render action: 'edit' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end

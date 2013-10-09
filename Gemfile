@@ -40,6 +40,11 @@ group :development do
   gem 'annotate'
 end
 
+group :test do
+    gem 'rspec-rails'
+    gem 'factory_girl_rails'
+end
+
 gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
 gem 'bootstrap-datetimepicker-rails'

@@ -21,11 +21,19 @@ class Event < ActiveRecord::Base
   belongs_to :user
   validates :start_at, :end_at, :name, presence: true
   validates :description, length: {maximum: 140}
-# before_save :time_value
+  validates :user_id, presence: true
+  validate :check_date
 
   # change event bg color
   def change_color
       self.color || 'rgb(12, 124, 231)'
+  end
+  
+  # Start_at less then end_at
+  def check_date
+    if start_at.present? && end_at.present?
+     errors.add(:start_at, "must be less then end date") if self.start_at > self.end_at
+    end
   end
   
 end

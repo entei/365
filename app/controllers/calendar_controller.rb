@@ -10,7 +10,7 @@ class CalendarController < ApplicationController
   # @event_strips = Event.event_strips_for_month(@shown_month, @first_day_of_week)  #all events
    
     #show all current_user events
-    past_events_color(current_user)
+    past_events_color
     events = current_user.events
     @event_strips = events.event_strips_for_month(@shown_month, @first_day_of_week) 
     
@@ -30,8 +30,9 @@ class CalendarController < ApplicationController
   private 
   
   # change bg color for past events
-  def past_events_color(user)
-    events = user.events.where('end_at < ?', Time.current)
+  # ???????????
+  def past_events_color
+    events = current_user.events.where('end_at < ?', Time.current)
     events.each { |e| e.update_attributes(color: '#D8D8D8') }
   end
   

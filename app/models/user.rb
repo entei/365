@@ -23,12 +23,14 @@
 
 class User < ActiveRecord::Base
   has_many :events
+  has_many :stickers
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true
   validates :nickname, uniqueness: true
   validates :username, length: {minimum: 4, maximum: 64}
+  validates :email, :format => { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,  :omniauth_providers => [:facebook, :vkontakte]
@@ -54,14 +56,14 @@ class User < ActiveRecord::Base
      self.events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3)
    end
   
-  # Today events :)
+  # Today events 
    def today_events
      today = Time.current.in_time_zone(self.timezone)
      end_of_today = Time.current.end_of_day.in_time_zone(self.timezone)
      self.events.where("end_at >= ? AND start_at < ?", today, end_of_today)
    end
   
-  # Left events :)
+  # Left events
    def events_left
      cur_time = Time.now.in_time_zone(self.timezone)
      self.events.where("end_at > ?", cur_time)
