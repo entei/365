@@ -1,24 +1,24 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :current_user, only: [:edit]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :current_user#, only: [:edit]
   
   def new
-    @event = Event.new 
+    @event = current_user.events.new 
   end
 
   def create
     @event = current_user.events.build(event_params)
-   
+
     respond_to do |format|
-    if @event.save 
-      format.html { redirect_to calendar_path, notice: "Event was successfully created." }
-      format.json { render action: 'show', status: :created, location: @event }
-    else
-      format.html { render action: 'new' }
-      format.json { render json: @event.errors, status: :unprocessable_entity }
+        if @event.save 
+          format.html { redirect_to calendar_path, notice: "Event was successfully created." }
+          format.json { render action: 'show', status: :created, location: @event }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @event.errors, status: :unprocessable_entity }
+        end
     end
-  end
   end
   
   def edit
@@ -39,7 +39,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @user = current_user
+    #@user = current_user
   end
   
   def destroy
