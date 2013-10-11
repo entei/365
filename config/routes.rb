@@ -1,5 +1,11 @@
 EventCAlendar::Application.routes.draw do
 
+  get "stickers/new"
+  get "stickers/create"
+  get "stickers/update"
+  get "stickers/edit"
+  get "stickers/delete"
+  get "stickers/view"
   get "static_pages/home"
   get "static_pages/about"
   get "static_pages/contact"
@@ -16,6 +22,8 @@ EventCAlendar::Application.routes.draw do
   get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   get "/calendar/:year/:month/:day", :controller => "calendar", :action => "day"
   get "calendar/day", :controller => "calendar", :action => "day"
+  
+  resources :notes
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

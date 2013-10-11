@@ -54,7 +54,7 @@ class EventsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       # Get only current user events 
-      @event = Event.find(params[:id], :conditions => ["user_id = ?", current_user.id])
+      @event = current_user.events.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

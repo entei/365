@@ -1,15 +1,15 @@
 <div class="form-signin">
 <%= form_for @event do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%=pluralize(@event.errors.count, "error") %> </h2> prohibited this user from being saved:
-      <ul>
-        <% @event.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-      </ul>
-    </div>
-<% end %>
+      <% if @event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%=pluralize(@event.errors.count, "error") %> </h2> prohibited this user from being saved:
+          <ul>
+            <% @event.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+          </ul>
+        </div>
+      <% end %>
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -89,12 +89,10 @@
     	<%= f.text_area :description, cols: 20, rows: 10, resize: false, placeholder: "Enter a description" %>
     </div>
     
-    
     </br>
     <div class="inline">
       <%= link_to "Back", calendar_path , class: "btn" %>
       <%= f.submit class: "btn btn-primary" %>
     </div>
-    
-<%end%>
+<% end %>
 </div>

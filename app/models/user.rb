@@ -23,7 +23,7 @@
 
 class User < ActiveRecord::Base
   has_many :events
-  has_many :stickers
+  has_many :notes
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
