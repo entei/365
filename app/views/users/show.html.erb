@@ -16,7 +16,7 @@
     </p>
     <p>
      <i class="icon-calendar"></i> <%= pluralize(current_user.events.count, "event") %>
-     <i class="icon-list-alt"></i> 0 stickers
+     <i class="icon-list-alt"></i> <%= pluralize(current_user.notes.count, "note") %>
     </p>
 
 <%= link_to 'Setting',edit_user_registration_path %> |

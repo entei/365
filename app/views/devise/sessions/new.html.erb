@@ -1,20 +1,18 @@
-<div class="container well">
-    <legend><h1>Sign in</h1></legend>
     <div class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-      <div><%= f.label :email %>
+      <div id="field"><%= f.label :email %>
       <%= f.email_field :email, :autofocus => true %></div>
     
-      <div><%= f.label :password %>
+      <div id="field"><%= f.label :password %>
       <%= f.password_field :password %></div>
     
       <% if devise_mapping.rememberable? -%>
         <div class="checkbox inline"><%= f.check_box :remember_me %><%= f.label :remember_me %></div></br>
       <% end -%>
     
-      <div><%= f.submit "Sign in", class: "btn btn-pirimary" %></div>
+      <div><%= f.submit "Sign in", class: "btn btn-primary"  %></div>
     <% end %>
     
     <%= render "devise/shared/links" %>
     </div>
-</div>

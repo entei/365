@@ -1,33 +1,33 @@
 
-    <legend><h1>Setting <%= resource_name.to_s.humanize %></h1></legend>
+    <legend><h2>Setting <%= resource_name.to_s.humanize %></h2></legend>
      <%= devise_error_messages! %>
-    <div class="form-signin">
+<div class="form">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
      
-      <div><%= f.label :username %>
+      <div id="field"><%= f.label :username %>
       <%= f.text_field :username %></div>
       
-      <div><%= f.label :nickname %>
+      <div id="field"><%= f.label :nickname %>
       <%= f.text_field :nickname %></div>
       
-      <div><%= f.label :email %>
+      <div id="field"><%= f.label :email %>
       <%= f.email_field :email, :autofocus => true %></div>
         
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
     
-      <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></br>
+      <div id="field"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></br>
       <%= f.password_field :password, :autocomplete => "off" %></div>
     
-      <div><%= f.label :password_confirmation %>
+      <div id="field"><%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation %></div>
     
-      <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></br>
+      <div id="field"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></br>
       <%= f.password_field :current_password %></div>
     
-      <div><%= f.label :time_zone_select %>
-      <%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones %></div>
+      <div id="field"><%= f.label :time_zone_select %>
+      <%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones, width: "364px" %></div>
     
       <div>
         <%= f.submit "Update", class: "btn btn-success" %>
@@ -39,4 +39,4 @@
     <h3>Delete my account</h3>
     
     <p>Do you want delete this account? <%= button_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete , class: "btn btn-danger"%></p>
-    </div>
+</div>

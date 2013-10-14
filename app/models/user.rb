@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
   validates :username, presence: true
-  validates :nickname, uniqueness: true
+ # validates :nickname, uniqueness: true
   validates :username, length: {minimum: 4, maximum: 64}
   validates :email, :format => { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   

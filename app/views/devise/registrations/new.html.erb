@@ -1,22 +1,22 @@
-<div class="container well">
-    <legend><h1>Sign up</h1></legend>
+<div class="form-signin">
+     <h2 class="form-signin-heading">Please sign up</h2>
     
-    <div class="form-signin">
+    <div class="user_form">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       
-      <div><%= f.label :username %>
+      <div id="field"><%= f.label :username %>
       <%= f.text_field :username %></div>
       
-      <div><%= f.label :email %>
+      <div id="field"><%= f.label :email %>
       <%= f.email_field :email, :autofocus => true %></div>
     
-      <div><%= f.label :password %>
+      <div id="field"><%= f.label :password %>
       <%= f.password_field :password %></div>
     
-      <div><%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %></div><br / >
-    
+      <div id="field"><%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %></div>
+      <br>
       <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
     <% end %>
     

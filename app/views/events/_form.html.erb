@@ -1,4 +1,4 @@
-<div class="form-signin">
+<div class="form">
 <%= form_for @event do |f| %>
       <% if @event.errors.any? %>
         <div id="error_explanation">
@@ -81,9 +81,7 @@
         <div class="jColorSelect" style="width: 220px;">
         </div>
     </div>
-    <div class="checkbox inline" id="field">
-        <%= f.check_box :important %><%= f.label :important %>      
-    </div></br>
+  
     <div id="field">
     	<%= f.label :description %>
     	<%= f.text_area :description, cols: 20, rows: 10, resize: false, placeholder: "Enter a description" %>

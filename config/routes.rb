@@ -15,7 +15,7 @@ EventCAlendar::Application.routes.draw do
 
   get 'profile' => 'users#show', as: 'profile'
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks" }
-  resources :users, :only => [:index, :destroy]
+  resources :users, :only => [:destroy]
   root :to => 'static_pages#home'
   
   resources :events
