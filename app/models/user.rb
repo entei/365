@@ -24,6 +24,8 @@
 class User < ActiveRecord::Base
   has_many :events
   has_many :notes
+  has_many :invitations, foreign_key: "guest_id", dependent: :destroy
+  has_many :shared_events, through: :invitations, source: :event
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   

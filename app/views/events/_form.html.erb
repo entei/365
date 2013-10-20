@@ -81,7 +81,20 @@
         <div class="jColorSelect" style="width: 220px;">
         </div>
     </div>
-  
+    </br>
+    
+    <script>
+    // tags input don't work after render this template within this script
+        $('#emails').tagsinput({
+            maxTags: 56
+        });
+    </script>
+
+   <%= fields_for :guests do |builder| %>
+        <%= builder.label "Add guests email" %>
+        <%= builder.text_field :email, id: "emails", data: {role: "tagsinput"} %>
+    <% end %>
+    
     <div id="field">
     	<%= f.label :description %>
     	<%= f.text_area :description, cols: 20, rows: 10, resize: false, placeholder: "Enter a description" %>

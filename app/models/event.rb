@@ -19,6 +19,12 @@
 class Event < ActiveRecord::Base
   has_event_calendar
   belongs_to :user
+  
+  has_many :invitations, foreign_key: "event_id", dependent: :destroy
+  has_many :guests, through: :invitations, source: :guest
+  #accepts_nested_attributes_for :guests
+
+ 
   validates :start_at, :end_at, :name, presence: true
   validates :description, length: {maximum: 140}
   validates :user_id, presence: true

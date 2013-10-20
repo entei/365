@@ -9,16 +9,16 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
-
-    respond_to do |format|
-        if @event.save 
-          format.html { redirect_to calendar_path, notice: "Event was successfully created." }
-          format.json { render action: 'show', status: :created, location: @event }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @event.errors, status: :unprocessable_entity }
+        respond_to do |format|
+            if @event.save 
+                @event.guests << get_reg_users(params[:guests][:email])
+                format.html { redirect_to calendar_path, notice: "Event was successfully created." }
+                format.json { render action: 'show', status: :created, location: @event }
+            else
+                format.html { render action: 'new' }
+                format.json { render json: @event.errors, status: :unprocessable_entity }
+            end
         end
-    end
   end
   
   def edit
@@ -60,5 +60,20 @@ class EventsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
       params.require(:event).permit(:name, :start_at, :end_at, :user_id, :description, :color, :important)
+    end
+    
+    # Get registered users array from guests
+    def get_reg_users(guest_emails)
+        g_arr = Array.new
+        guest_emails.split(",").each do |e|
+            # add user to guests array
+            if user = User.find_by(email: e.strip)
+                g_arr << user
+            else
+               p "User with email #{e} not found"
+               # send email invite
+            end
+        end
+        g_arr
     end
 end

@@ -17,5 +17,6 @@
 //= require bootstrap
 //= require syronex-colorpicker
 //= require bootstrap-datetimepicker.min
+//= require bootstrap-tagsinput
 
 
