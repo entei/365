@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:edit, :update, :destroy]
   before_action :current_user#, only: [:edit]
   
   def new
@@ -39,7 +39,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    #@user = current_user
+    @event = current_user.events.find_by(id: params[:id]) || current_user.shared_events.find(params[:id])
+    @owner = User.find(@event.user_id)
   end
   
   def destroy
