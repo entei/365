@@ -1,0 +1,1 @@
+{"ts":1380201690978,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>New user</h1>\n\n<%= render 'form' %>\n\n<%= link_to 'Back', users_path %>\n"]],"start1":0,"start2":0,"length1":0,"length2":75}]],"length":75}

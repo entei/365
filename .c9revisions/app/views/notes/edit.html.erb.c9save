@@ -1,0 +1,2 @@
+{"ts":1381501750214,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>Stickers#edit</h1>\n<p>Find me in app/views/stickers/edit.html.erb</p>\n"]],"start1":0,"start2":0,"length1":0,"length2":74}]],"length":74}
+{"contributors":[],"silentsave":false,"ts":1381501855709,"patch":[[{"diffs":[[0,"<h1>"],[-1,"Stickers#edit</h1>\n<p>Find me in app/views/stickers/edit.html.erb</p"],[1,"Edit note</h1>\n<%= render 'form' %"],[0,">\n"]],"start1":0,"start2":0,"length1":74,"length2":40}]],"length":40,"saved":false}

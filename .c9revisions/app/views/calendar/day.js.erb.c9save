@@ -1,0 +1,11 @@
+{"ts":1380562220087,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h3> Hello </h3>\n<%= @today %>"]],"start1":0,"start2":0,"length1":0,"length2":30}]],"length":30}
+{"contributors":[],"silentsave":false,"ts":1380704286999,"patch":[[{"diffs":[[-1,"<h3> Hello </h3>\n<%= @today %>"],[1,"$('#time')"]],"start1":0,"start2":0,"length1":30,"length2":10}]],"length":10,"saved":false}
+{"ts":1380704318484,"patch":[[{"diffs":[[0,"'#time')"],[1,".html(\"<%= Time.current.now %>\")"]],"start1":2,"start2":2,"length1":8,"length2":40}]],"length":42,"saved":false}
+{"ts":1380704632431,"patch":[[{"diffs":[[0,"$('#time"],[1,"_div"],[0,"').html("]],"start1":0,"start2":0,"length1":16,"length2":20},{"diffs":[[0,"ml(\""],[-1,"<%= Time.current.now"],[1,"The current time is <%= Time.now.to_s"],[0," %>\")"],[1,";"]],"start1":17,"start2":17,"length1":29,"length2":47}]],"length":64,"saved":false}
+{"ts":1380704707283,"patch":[[{"diffs":[[0,"rren"],[-1,"t time is <%= Time.now.to_s %>"],[0,"\");"]],"start1":27,"start2":27,"length1":37,"length2":7}]],"length":34,"saved":false}
+{"ts":1380704869114,"patch":[[{"diffs":[[0,"The curr"],[1,"dsfsdfsdfsdfsdf"],[0,"en\");"]],"start1":21,"start2":21,"length1":13,"length2":28}]],"length":49,"saved":false}
+{"ts":1380705176209,"patch":[[{"diffs":[[0,"time"],[-1,"_div"],[0,"').h"]],"start1":4,"start2":4,"length1":12,"length2":8}]],"length":45,"saved":false}
+{"ts":1380705526877,"patch":[[{"diffs":[[-1,"$('#time').html(\"The currdsfsdfsdfsdfsdfen\");"]],"start1":0,"start2":0,"length1":45,"length2":0}]],"length":0,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1380706149053,"patch":[[{"diffs":[[1,"<%= c_time %>"]],"start1":0,"start2":0,"length1":0,"length2":13}]],"length":13,"saved":false}
+{"ts":1380706180537,"patch":[[{"diffs":[[0,"<%= "],[1,"@"],[0,"c_time %"]],"start1":0,"start2":0,"length1":12,"length2":13}]],"length":14,"saved":false}
+{"ts":1380706274229,"patch":[[{"diffs":[[-1,"<%= @c_time %>"]],"start1":0,"start2":0,"length1":14,"length2":0}]],"length":0,"saved":false}

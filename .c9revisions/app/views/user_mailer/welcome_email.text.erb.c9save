@@ -1,0 +1,3 @@
+{"ts":1380901511305,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1380901605407,"patch":[[{"diffs":[[1,"Welcome to example.com, <%= @user.name %>\n===============================================\n\nYou have successfully signed up to example.com,\nyour username is: <%= @user.login %>.\n\nTo login to the site, just follow this link: <%= @url %>.\n\nThanks for joining!"]],"start1":0,"start2":0,"length1":0,"length2":256}]],"length":256,"saved":false}
+{"ts":1380905873645,"patch":[[{"diffs":[[0,"d up to "],[-1,"example.com"],[1,"365days"],[0,",\nyour u"]],"start1":118,"start2":118,"length1":27,"length2":23}]],"length":252,"saved":false}

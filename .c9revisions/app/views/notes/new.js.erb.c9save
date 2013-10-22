@@ -1,0 +1,7 @@
+{"ts":1381484407525,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1381484453017,"patch":[[{"diffs":[[1,"$('document').ready(function(){\n    $('#add_form').modal().html(\"<%= j render 'notes/form' %>\");\n});"]],"start1":0,"start2":0,"length1":0,"length2":100}]],"length":100,"saved":false}
+{"ts":1381485112399,"patch":[[{"diffs":[[0," 'notes/"],[-1,"form"],[1,"add_note"],[0,"' %>\");\n"]],"start1":77,"start2":77,"length1":20,"length2":24}]],"length":104,"saved":false}
+{"ts":1381485193077,"patch":[[{"diffs":[[0,"otes/add"],[-1,"_"],[0,"note' %>"]],"start1":80,"start2":80,"length1":17,"length2":16}]],"length":103,"saved":false}
+{"ts":1381485220459,"patch":[[{"diffs":[[0,"tes/"],[-1,"addnote"],[1,"_form"],[0,"' %>"]],"start1":81,"start2":81,"length1":15,"length2":13}]],"length":101,"saved":false}
+{"ts":1381485224229,"patch":[[{"diffs":[[0," 'notes/"],[-1,"_"],[0,"form' %>"]],"start1":77,"start2":77,"length1":17,"length2":16}]],"length":100,"saved":false}
+{"ts":1381485292450,"patch":[[{"diffs":[[0," 'notes/"],[-1,"form"],[1,"addnote"],[0,"' %>\");\n"]],"start1":77,"start2":77,"length1":20,"length2":23}]],"length":103,"saved":false}

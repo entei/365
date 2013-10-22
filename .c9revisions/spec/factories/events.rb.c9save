@@ -1,0 +1,6 @@
+{"ts":1381225540602,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1381225737517,"patch":[[{"diffs":[[1,"FactoryGirl.define do \n    factory :event do\n        name \"Event\"\n        start_at Time.current\n        end_at Time.current\n        color \"blue\"\n    end\nend"]],"start1":0,"start2":0,"length1":0,"length2":156}]],"length":156,"saved":false}
+{"ts":1381225942707,"patch":[[{"diffs":[[0,"vent do\n"],[1,"        association(user)\n"],[0,"        "]],"start1":37,"start2":37,"length1":16,"length2":42}]],"length":182,"saved":false}
+{"ts":1381225947337,"patch":[[{"diffs":[[0,"ciation("],[1,":"],[0,"user)\n  "]],"start1":57,"start2":57,"length1":16,"length2":17}]],"length":183,"saved":false}
+{"ts":1381226929229,"patch":[[{"diffs":[[0," do\n"],[-1,"        association(:user)\n"],[0,"    "]],"start1":41,"start2":41,"length1":35,"length2":8}]],"length":156,"saved":false}
+{"ts":1381227615530,"patch":[[{"diffs":[[0,"vent do\n"],[1,"        association(:user)\n"],[0,"        "]],"start1":37,"start2":37,"length1":16,"length2":43}]],"length":183,"saved":false}

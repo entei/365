@@ -1,0 +1,3 @@
+{"ts":1381422417063,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>Stickers#new</h1>\n<p>Find me in app/views/stickers/new.html.erb</p>\n"]],"start1":0,"start2":0,"length1":0,"length2":72}]],"length":72}
+{"contributors":[],"silentsave":false,"ts":1381422525224,"patch":[[{"diffs":[[0,"<"],[-1,"h1>Stickers#new</h1>\n<p>Find me in app/views/stickers/new.html.erb</p"],[1,"legend><h1>Create new sticker</h1></legend>\n<%= render 'form' %"],[0,">\n"]],"start1":0,"start2":0,"length1":72,"length2":66}]],"length":66,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1381433394162,"patch":[[{"diffs":[[0,"new "],[-1,"sticker"],[1,"note"],[0,"</h1"]],"start1":19,"start2":19,"length1":15,"length2":12}]],"length":63,"saved":false}

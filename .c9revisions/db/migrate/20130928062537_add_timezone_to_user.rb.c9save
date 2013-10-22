@@ -1,0 +1,1 @@
+{"ts":1380349930042,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class AddTimezoneToUser < ActiveRecord::Migration\n  def change\n    add_column :users, :timezone, :string\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":115}]],"length":115}

@@ -1,0 +1,4 @@
+{"ts":1381222552827,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1381225536805,"patch":[[{"diffs":[[1,"FactoryGirl.define do\n    factory :user do\n        username \"Sam Rockwell\"\n        nickname \"srock\"\n        sequence(:email) {|i| \"email#{i}@exemple.com\" }\n        password \"12345678\"\n    end\nend"]],"start1":0,"start2":0,"length1":0,"length2":195}]],"length":195,"saved":false}
+{"ts":1381226615707,"patch":[[{"diffs":[[0,"345678\"\n"],[1,"        password_confirmation \"12345678\"\n"],[0,"    end\n"]],"start1":176,"start2":176,"length1":16,"length2":57}]],"length":236,"saved":false}
+{"ts":1381228005383,"patch":[[{"diffs":[[0,"    "],[-1,"nickname \"srock\""],[1,"sequence(:nickname) {|i| \"nickname#{i}\" }"],[0,"\n   "]],"start1":79,"start2":79,"length1":24,"length2":49}]],"length":261,"saved":false}

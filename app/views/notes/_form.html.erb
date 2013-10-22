@@ -1,0 +1,51 @@
+<div class="form-signin">
+    <%= form_for @note do |f| %>
+    
+    <% if @note.errors.any? %>
+     <div id="error_explanation">
+       <h2><%=pluralize(@note.errors.count, "error") %> </h2> prohibited this user from being saved:
+       <ul>
+         <% @note.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+           <% end %>
+       </ul>
+     </div>
+    <% end %>
+    
+    <script>
+        $(document).ready(function(){
+              $('#colorpicker').colorPicker({			
+                  defaultColor: 0, // index of the default color (optional)
+                  columns: 13,     // number of columns (optional)  
+                  color: ['#FFA877', '#40E0D0', '#9ACD32', '#FF84A2', '#B0C4DE', '#9191FF', '#FF6347', '#FFEF3C', '#5CCCCC', '#B5FF18', '#64C1FF', '#A13DD5', '#269926'], // list of colors (optional)
+                  // click event - selected color is passed as arg.
+                  click: function(color){$('.output').val(color);}
+                });
+            });
+    </script>
+    
+    <div id="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    
+    <div id="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+    </div>
+    
+    <div id="field">
+        <%= f.label :color %>
+        <%= f.hidden_field :color, class: "output" %>
+    </div> 
+    <div id="colorpicker" style="width: 220px;">
+        <div class="jColorSelect" style="width: 220px;">
+        </div>
+    </div>
+    <br>
+    <div class="inline">
+      <%= link_to "Back", calendar_path , class: "btn" %>
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+    <% end %>
+</div>

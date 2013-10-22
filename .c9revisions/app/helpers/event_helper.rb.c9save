@@ -1,0 +1,2 @@
+{"ts":1380314159417,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"module EventsHelper\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":24}]],"length":24}
+{"contributors":[],"silentsave":false,"ts":1381065660267,"patch":[[{"diffs":[[0,"vent"],[-1,"s"],[0,"Help"]],"start1":8,"start2":8,"length1":9,"length2":8}]],"length":23,"saved":false}

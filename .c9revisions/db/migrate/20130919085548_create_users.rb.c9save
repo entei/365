@@ -1,0 +1,1 @@
+{"ts":1380139940594,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class CreateUsers < ActiveRecord::Migration\n  def change\n    create_table :users do |t|\n      t.string :username\n      t.string :nickname\n      t.string :provider\n      t.string :url\n\n      t.timestamps\n    end\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":221}]],"length":221}

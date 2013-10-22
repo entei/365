@@ -1,0 +1,2 @@
+{"ts":1381503854989,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1381503859768,"patch":[[{"diffs":[[1,"$(\"<%= j(render @note) %>\").prependTo(\".note\");\n$('#add_form').modal('hide');"]],"start1":0,"start2":0,"length1":0,"length2":77}]],"length":77,"saved":false}

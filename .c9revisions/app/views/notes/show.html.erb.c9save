@@ -1,0 +1,2 @@
+{"ts":1381481690575,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<h1>Stickers#view</h1>\n<p>Find me in app/views/stickers/view.html.erb</p>\n"]],"start1":0,"start2":0,"length1":0,"length2":74}]],"length":74}
+{"contributors":[],"silentsave":false,"ts":1381481698656,"patch":[[{"diffs":[[0,"tickers#"],[-1,"vie"],[1,"sho"],[0,"w</h1>\n<"]],"start1":5,"start2":5,"length1":19,"length2":19},{"diffs":[[0,"tickers/"],[-1,"vie"],[1,"sho"],[0,"w.html.e"]],"start1":48,"start2":48,"length1":19,"length2":19}]],"length":74,"saved":false}

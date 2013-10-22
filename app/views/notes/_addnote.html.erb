@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Note</h3>
+  </div>
+  <div class="modal-body">
+    <%= form_for(@note, remote: true) do |f| %>
+        <div id="field">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+        </div>
+        
+        <div id="field">
+            <%= f.label :description %>
+            <%= f.text_area :description, rows: 8 %>
+        </div>
+        
+       </br>
+        <div class="">
+          <%= f.submit class: "btn btn-primary" %>
+        </div>
+    <% end %>
+  </div>

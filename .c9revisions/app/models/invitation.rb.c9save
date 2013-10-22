@@ -1,0 +1,5 @@
+{"ts":1381748727506,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class Invitation < ActiveRecord::Base\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":42}]],"length":42}
+{"contributors":[],"silentsave":false,"ts":1381749271513,"patch":[[{"diffs":[[0,"d::Base\n"],[1,"    belongs_to :guest, class_name: 'User'\n    belongs_to :event, class_name: 'Event'\n"],[0,"end\n"]],"start1":30,"start2":30,"length1":12,"length2":97}]],"length":127,"saved":false}
+{"ts":1381749354220,"patch":[[{"diffs":[[0,"'Event'\n"],[1,"    validates :gues_id, presence: true\n    validates :event_id, preesence: true\n"],[0,"end\n"]],"start1":115,"start2":115,"length1":12,"length2":92}]],"length":207,"saved":false}
+{"ts":1381749392865,"patch":[[{"diffs":[[0,"_id, pre"],[-1,"e"],[0,"sence: t"]],"start1":182,"start2":182,"length1":17,"length2":16}]],"length":206,"saved":false}
+{"ts":1381749776931,"patch":[[{"diffs":[[0,"es :gues"],[1,"t"],[0,"_id, pre"]],"start1":134,"start2":134,"length1":16,"length2":17}]],"length":207,"saved":false}

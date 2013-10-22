@@ -1,0 +1,1 @@
+{"ts":1381088230219,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class CreateRelationships < ActiveRecord::Migration\n  def change\n    create_table :relationships do |t|\n      t.integer :event_id\n      t.integer :user_id\n\n      t.timestamps\n    end\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":193}]],"length":193}
