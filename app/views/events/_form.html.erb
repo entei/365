@@ -92,7 +92,7 @@
 
    <%= fields_for :guests do |builder| %>
         <%= builder.label "Add guests email" %>
-        <%= builder.text_field :email, id: "emails", data: {role: "tagsinput"} %>
+        <%= builder.text_field :email, id: "emails", data: {role: "tagsinput"}, value: @guests_emails %>
     <% end %>
     
     <div id="field">

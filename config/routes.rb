@@ -1,11 +1,5 @@
 EventCAlendar::Application.routes.draw do
 
-  get "stickers/new"
-  get "stickers/create"
-  get "stickers/update"
-  get "stickers/edit"
-  get "stickers/delete"
-  get "stickers/view"
   get "static_pages/home"
   get "static_pages/about"
   get "static_pages/contact"
@@ -15,7 +9,7 @@ EventCAlendar::Application.routes.draw do
 
   get 'profile' => 'users#show', as: 'profile'
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks" }
-  resources :users, :only => [:destroy]
+  resources :users, only: [:destroy]
   root :to => 'static_pages#home'
   
   resources :events
@@ -24,6 +18,7 @@ EventCAlendar::Application.routes.draw do
   get "calendar/day", :controller => "calendar", :action => "day"
   
   resources :notes
+  resources :invitations, only: [:destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

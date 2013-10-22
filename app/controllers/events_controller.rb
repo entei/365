@@ -24,11 +24,14 @@ class EventsController < ApplicationController
   def edit
     @start_at = @event.start_at
     @end_at = @event.end_at
+    @guests_emails = @event.guests.map{|g| g.email } * ","
   end
 
   def update
     respond_to do |format|
       if @event.update(event_params)
+        @event.invitations.destroy_all # delete all guests
+        @event.guests << get_reg_users(params[:guests][:email])
         format.html { redirect_to calendar_path, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
