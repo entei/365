@@ -201,8 +201,14 @@ body {
 }
 
 .signup {
+    margin-left: 100px;   
+}
+
+#signup {
    float: left;
-   padding-left: 70px;
+   span {
+       font-size: 25px;
+   }
 }
 
 .button_row{
@@ -211,7 +217,6 @@ body {
 
 .app {
     float: right;
-    margin-right: 100px;
     display: inline;
 }
 
@@ -291,7 +296,7 @@ footer ul li {
   background-color: transparent;
   padding: 0;
   margin: 0;
-  width: auto !important;
+ // width: auto !important;
   max-width: inherit;
 }
 .bootstrap-tagsinput input:focus {

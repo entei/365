@@ -3,14 +3,15 @@
         <h1><%= Date.current.strftime("%B %e") %></h1>
          
         <ul>
-            <h5><li><%= pluralize(current_user.events_left.count, "event") %> left</li></h5>
-            <h5><li><%= pluralize(current_user.today_events.count, "event") %> today</li></h5>
+            <h5><li><%= pluralize(current_user.events_left.count + current_user.shared_events_left.count, "event") %> left</li></h5>
+            <h5><li><%= pluralize(current_user.today_events.count, "my event") %> today</li></h5>
+            <h5><li><%= pluralize(current_user.today_shared_events.count, "shared event") %> today</li></h5>
         </ul>
         
         <ul class="nav nav-list side">
           <li class="nav-header">Actions</li>
-          <li><%= link_to image_tag('calendar_sticker.png', size: "25x25") + " Add event", new_event_path, style: "font-size: 18px; vertical-align: middle;" %></li>
-          <li><%= link_to image_tag('sticker.png', size: "25x25") + " Add note", notes_path, style: "font-size: 18px;" %></li>
+          <li><%= link_to image_tag('calendar_sticker.png', size: "25x25") + " Add event", new_event_path, style: "font-size: 18px; vertical-align: bottom;" %></li>
+          <li><%= link_to image_tag('sticker.png', size: "25x25") + " Add note", notes_path, style: "font-size: 18px; vertical-align: bottom;" %></li>
           
           <li class="nav-header">Upcoming events</li>
           <% current_user.upcmng_e.each do |e| %>

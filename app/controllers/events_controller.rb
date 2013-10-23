@@ -72,10 +72,10 @@ class EventsController < ApplicationController
         guest_emails.split(",").each do |e|
             # add user to guests array
             if user = User.find_by(email: e.strip)
-                g_arr << user
+               g_arr << user unless user == current_user 
             else
                p "User with email #{e} not found"
-               # send email invite
+               # send email notificate 
             end
         end
         g_arr

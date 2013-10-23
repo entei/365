@@ -56,14 +56,21 @@ class User < ActiveRecord::Base
   
   # Upcoming events
    def upcmng_e
-     self.events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3)
+     self.events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3) +
+     self.shared_events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3)
    end
   
-  # Today events 
+  # Today owner events 
    def today_events
      today = Time.current.in_time_zone(self.timezone)
      end_of_today = Time.current.end_of_day.in_time_zone(self.timezone)
      self.events.where("end_at >= ? AND start_at < ?", today, end_of_today)
+   end
+   
+   def today_shared_events
+     today = Time.current.in_time_zone(self.timezone)
+     end_of_today = Time.current.end_of_day.in_time_zone(self.timezone)
+     self.shared_events.where("end_at >= ? AND start_at < ?", today, end_of_today)
    end
   
   # Left events
@@ -71,5 +78,9 @@ class User < ActiveRecord::Base
      cur_time = Time.now.in_time_zone(self.timezone)
      self.events.where("end_at > ?", cur_time)
    end
-  
+   
+   def shared_events_left
+     cur_time = Time.now.in_time_zone(self.timezone)
+     self.shared_events.where("end_at > ?", cur_time)
+   end
 end
