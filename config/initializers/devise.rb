@@ -7,6 +7,7 @@ Devise.setup do |config|
   config.secret_key = '5ce77a8dca7328d2269e9e9552a313ae1552219e35c8ec8cd33bfe513b1f6c75cdfe47672c2113f00a8f88e1a9d5f769ce62757f2fce03fea7865aab0e37e558'
 
   config.omniauth :facebook, '509688585768674', '29c826d573c1b4fee9035c5a32c88b19'
+  config.omniauth :vkontakte, '3952126', '4m0TyOhp0Ohm5X94WIKa'
   
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,

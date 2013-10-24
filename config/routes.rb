@@ -6,11 +6,13 @@ EventCAlendar::Application.routes.draw do
   #get "omniauth_callbacks/facebook"
   #get "omniauth_callbacks/vkontakte"
   
-
-  get 'profile' => 'users#show', as: 'profile'
+  # Omniauth
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks" }
-  resources :users, only: [:destroy]
+  
+  resources :users, only: [:update, :destroy]
+  
   root :to => 'static_pages#home'
+  get 'profile' => 'users#show', as: 'profile'
   
   resources :events
   get '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
