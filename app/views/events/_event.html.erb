@@ -1,8 +1,9 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel"><%= @event.name %></h3>
-  </div>
-  <div class="modal-body">
+</div>
+
+<div class="modal-body">
     <p><h5 style="display: inline;">Start at: </h5><%= @event.start_at.strftime("%e %B %Y %H:%M") %></p>
     <p><h5 style="display: inline;">End at: </h5><%= @event.end_at.strftime("%e %B %Y %H:%M") %></p>
     <p><h5 style="display: inline;">Owner: </h5><%= "#{@owner.username} (#{@owner.email})" %></p>
@@ -14,7 +15,7 @@
         <p> <h5>Description:</h5></p>
         <%= @event.description %></br>
     <% end %>
-  </div>
+</div>
   <div class="modal-footer">
     <% if current_user.id == @event.user_id %>
        <%= link_to "Edit event", edit_event_path(@event), class: "btn" %>

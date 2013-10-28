@@ -1,6 +1,6 @@
 <div class="span3">  
     <div class="well sidebar-nav">
-        <h1><%= Date.current.strftime("%B %e") %></h1>
+        <h2><%= Date.current.strftime("%B %e") %></h2>
          
         <ul>
             <h5><li><%= pluralize(current_user.events_left.count + current_user.shared_events_left.count, "event") %> left</li></h5>

@@ -37,11 +37,9 @@ class NotesController < ApplicationController
       if @note.update(note_params)
           format.html { redirect_to notes_path, notice: "Note was successfully created." }
           format.json { @note }
-          format.js {}
       else
          format.html { render action: 'edit' }
          format.json { render json: @note.errors, status: :unprocessable_entity }
-         format.js {}
       end
   end
   end
@@ -58,19 +56,7 @@ class NotesController < ApplicationController
   end
 
   def show
- 
   end
-  
-#   def sort
-#     JSON.parse(params[:Activity]).each_with_index do |x, index|
-#       idx = x["id"]
-#       positionx = index+1
-#       column = x["column"]
-#       activity = Activity.find(idx)
-#       activity.update_attributes(:position => positionx, :day_id => column)
-#     end
-#     render nothing: true
-#   end
   
   private 
   

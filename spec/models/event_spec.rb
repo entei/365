@@ -19,18 +19,18 @@
 require 'spec_helper'
 
 describe Event do
+
+    let(:event) { FactoryGirl.create(:event) }
+    
     it 'should have a color' do
-        event = FactoryGirl.create(:event)
         expect(event.color).to_not be_nil
     end
     
     it 'important should be false by default' do
-        event = FactoryGirl.create(:event)
         expect(event.important).to eq(false)
     end
     
     it 'should have a user' do
-        event = FactoryGirl.create(:event)
         expect(event.user).to_not be_nil
     end
     
@@ -38,6 +38,10 @@ describe Event do
         event = FactoryGirl.build(:event, start_at: Date.current, end_at: Date.current - 1.day)
         event.valid?
         expect(event.errors.full_messages).to include("Start at must be less then end date")
+    end
+    
+    it 'should respond to invitations' do
+        expect(event).to respond_to(:invitations)
     end
     
 end

@@ -10,7 +10,7 @@ module UsersHelper
         user.events.count
       end
       # Get stickers count
-      def tickers_count(user)
+      def stickers_count(user)
         user.sticker.count
       end
 end

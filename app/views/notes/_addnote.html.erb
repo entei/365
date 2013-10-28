@@ -3,7 +3,7 @@
     <h3 id="myModalLabel">Note</h3>
   </div>
   <div class="modal-body">
-    <%= form_for(@note, remote: true) do |f| %>
+    <%= form_for(@note) do |f| %>
         <div id="field">
             <%= f.label :title %>
             <%= f.text_field :title %>

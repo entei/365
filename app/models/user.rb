@@ -31,13 +31,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   
   validates :username, presence: true
- # validates :nickname, uniqueness: true
+# validates :nickname, uniqueness: true
   validates :username, length: {minimum: 4, maximum: 64}
   validates :email, :format => { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable,  :omniauth_providers => [:facebook, :vkontakte]
-   
    
    # Find facebook user by her page url or create new
    def self.find_for_facebook_oauth access_token

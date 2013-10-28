@@ -2,7 +2,7 @@
 <%= form_for @event do |f| %>
       <% if @event.errors.any? %>
         <div id="error_explanation">
-          <h2><%=pluralize(@event.errors.count, "error") %> </h2> prohibited this user from being saved:
+          <h2><%=pluralize(@event.errors.count, "error") %> </h2>:
           <ul>
             <% @event.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
@@ -26,25 +26,19 @@
               // click event - selected color is passed as arg.
               click: function(color){$('.output').val(color);}
             });
+            
+         
+            $('#datetimepicker1').datetimepicker({
+              language: 'pt-BR',
+              format: 'yyyy-MM-dd hh:mm:ss'
+            });
+            
+            $('#datetimepicker2').datetimepicker({
+              language: 'pt-BR',
+              format: 'yyyy-MM-dd hh:mm:ss'
+            });
         });
     </script>
-    
-    
-    <script type="text/javascript">
-  $(function() {
-    $('#datetimepicker1').datetimepicker({
-      language: 'pt-BR',
-      format: 'yyyy-MM-dd hh:mm:ss'
-    });
-    $('#datetimepicker2').datetimepicker({
-      language: 'pt-BR',
-      format: 'yyyy-MM-dd hh:mm:ss'
-    });
-  });
-</script>
-
-
-
 
     <div id="field">
     	<%= f.label :name %>
@@ -84,7 +78,7 @@
     </br>
     
     <script>
-    // tags input don't work after render this template within this script
+    // tags input don't work after render this template within this script %)
         $('#emails').tagsinput({
             maxTags: 56
         });

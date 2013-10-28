@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
-/* universal */
 
+/* universal */
 body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 16px;
@@ -21,11 +21,13 @@ body {
 } 
 
 h1 {
-     text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0px 2px 2px #ccc, 0px 4px 4px #ccc,0px 6px 6px #ccc;
+    text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0px 2px 2px #ccc, 0px 4px 4px #ccc,0px 6px 6px #ccc;
 }
+
 a {
     color: #333333;
 }
+
 .logo {
     text-transform: uppercase;
     text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0px 2px 2px #ccc, 0px 4px 4px #ccc,0px 6px 6px #ccc;
@@ -48,8 +50,8 @@ a {
   }
 }
 
-span {
-
+.app {
+    float: right;
 }
 
 .brand {
@@ -121,8 +123,8 @@ body {
 
 .home {
     width: 100%;
-    background: url(bg-blue.jpg) repeat ;
 }
+
 .btn-event {
 	background-color: #66CCFF;
 	text-align: center;
@@ -156,7 +158,6 @@ body {
 		0px 1px 3px rgba(000,000,000,0.5),
 		inset 0px 0px 1px rgba(255,255,255,0.5);
 
-	
 	&:hover{
 	 color: none;
 	 text-decoration: none;	    
@@ -192,7 +193,6 @@ body {
 		0px 1px 3px rgba(000,000,000,0.5),
 		inset 0px 0px 1px rgba(255,255,255,0.5);
 
-	
 	&:hover{
 	 color: none;
 	 text-decoration: none;	    
@@ -275,6 +275,8 @@ footer ul li {
   float: left;
   margin-left: 10px;
 }
+
+/* tagsinput styles */
 
 .bootstrap-tagsinput {
   background-color: #fff;
