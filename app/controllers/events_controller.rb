@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
         respond_to do |format|
             if @event.save 
-                @event.guests << get_reg_users(params[:guests][:email])
+                @event.guests << get_reg_users(params[:guests][:email]) unless params[:guests][:email]
                 format.html { redirect_to calendar_path, notice: "Event was successfully created." }
                 format.json { render action: 'show', status: :created, location: @event }
             else
@@ -30,8 +30,10 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        @event.invitations.destroy_all # delete all guests
-        @event.guests << get_reg_users(params[:guests][:email])
+          unless params[:guests][:email]
+            @event.invitations.destroy_all # delete all guests
+            @event.guests << get_reg_users(params[:guests][:email])
+          end
         format.html { redirect_to calendar_path, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
