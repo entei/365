@@ -1,13 +1,18 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  require 'yaml'
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   config.secret_key = '5ce77a8dca7328d2269e9e9552a313ae1552219e35c8ec8cd33bfe513b1f6c75cdfe47672c2113f00a8f88e1a9d5f769ce62757f2fce03fea7865aab0e37e558'
 
-  config.omniauth :facebook, '509688585768674', '29c826d573c1b4fee9035c5a32c88b19'
-  config.omniauth :vkontakte, '3952126', '4m0TyOhp0Ohm5X94WIKa'
+ #OAUTH_CREDENTIALS_PATH = "#{ENV['HOME']}/config/oauth.yml"
+  OAUTH_CREDENTIALS_PATH = "#{Rails.root}/config/oauth.yml"
+  OAUTH_CREDENTIALS = YAML.load_file(OAUTH_CREDENTIALS_PATH)[Rails.env]
+
+  config.omniauth :vkontakte, OAUTH_CREDENTIALS['vkontakte']['app_id'], OAUTH_CREDENTIALS['vkontakte']['app_secret']
+  config.omniauth :facebook, OAUTH_CREDENTIALS['facebook']['app_id'], OAUTH_CREDENTIALS['facebook']['app_secret']
   
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
