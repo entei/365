@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :update_sanitized_params, if: :devise_controller?
   around_action :user_time_zone, :if => :current_user
     
-    private 
+  private 
     
     def update_sanitized_params
       devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:nickname, :username, :provider, :url, :email, :password, :timezone, :password_confirmation)}

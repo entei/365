@@ -1,30 +1,31 @@
 <div class="span3">  
-    <div class="well sidebar-nav">
-        <h2><%= Date.current.strftime("%B %e") %></h2>
-         
-        <ul>
-            <h5><li><%= pluralize(current_user.events_left.count + current_user.shared_events_left.count, "event") %> left</li></h5>
-            <h5><li><%= pluralize(current_user.today_events.count, "my event") %> today</li></h5>
-            <h5><li><%= pluralize(current_user.today_shared_events.count, "shared event") %> today</li></h5>
-        </ul>
-        
-        <ul class="nav nav-list side">
-          <li class="nav-header">Actions</li>
-          <li><%= link_to image_tag('calendar_sticker.png', size: "25x25") + " Add event", new_event_path, style: "font-size: 18px; vertical-align: bottom;" %></li>
-          <li><%= link_to image_tag('sticker.png', size: "25x25") + " Add note", notes_path, style: "font-size: 18px; vertical-align: bottom;" %></li>
-          
-          <li class="nav-header">Upcoming events</li>
-          <% current_user.upcmng_e.each do |e| %>
-            <li><%= link_to "#{e.name}", e, remote: true, id: e.id %></li>
-          <% end %>
-        </ul>
-    </div><!--/.well -->
+  <div class="well sidebar-nav">
+    <h2><%= Date.current.strftime("%B %e") %></h2>
+     
+    <ul>
+        <h5><li><%= pluralize(current_user.events_left.count + current_user.shared_events_left.count, "event") %> left</li></h5>
+        <h5><li><%= pluralize(current_user.today_events.count, "my event") %> today</li></h5>
+        <h5><li><%= pluralize(current_user.today_shared_events.count, "shared event") %> today</li></h5>
+    </ul>
+    
+    <ul class="nav nav-list side">
+      <li class="nav-header">Actions</li>
+      <li><%= link_to image_tag('calendar_sticker.png', size: "25x25") + " Add event", new_event_path, style: "font-size: 18px; vertical-align: bottom;" %></li>
+      <li><%= link_to image_tag('sticker.png', size: "25x25") + " Add note", notes_path, style: "font-size: 18px; vertical-align: bottom;" %></li>
+      
+      <li class="nav-header">Upcoming events</li>
+      <% current_user.upcmng_e.each do |e| %>
+        <li><%= link_to "#{e.name}", e, remote: true, id: e.id %></li>
+      <% end %>
+    </ul>
+  </div><!--/.well -->
     
   <% if params[:controller] == 'calendar' %>
-  <div id="center">
-        <%= link_to "New event", new_event_path, class: "new-event pull-left" %>
-  </div>
+    <div id="center">
+      <%= link_to "New event", new_event_path, class: "new-event pull-left" %>
+    </div>
   <% end %>
+  
 </div><!--/span-->
-<div id="event_form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-</div>
+
+<div id="event_form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>

@@ -1,11 +1,11 @@
 <li class="new-item">
 <div class="top_note">
-<%= link_to "", note, id: note.id, method: :delete, data: { confirm: "Are you sure?"}, class: 'icon-remove' %>
-<%= link_to "", edit_note_path(note), remote: true, class: 'icon-edit' %>
-<%= link_to "", new_note_path, remote: true, class: 'icon-plus'%>
+  <%= link_to "", note, id: note.id, method: :delete, data: { confirm: "Are you sure?"}, class: 'icon-remove' %> 
+  <%= link_to "", edit_note_path(note), remote: true, class: 'icon-edit' %>
+  <%= link_to "", new_note_path, remote: true, class: 'icon-plus'%>
 </div>
 <p>
-    <strong id="note_title"><%= note.title %></strong></br>
-    <%= note.description %>
+ <strong id="note_title"><%= note.title %></strong></br>
+ <%= note.description %>
 </p>
 </li>

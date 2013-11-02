@@ -1,30 +1,28 @@
 <ul class="note">
-    <%= render @notes %>
+  <%= render @notes %>
     <% unless @notes.any? %>
-        <li id="tips">
+      <li id="tips">
         <div class="top_note">
-            <%= link_to "", "#", onclick: "$(this).parent().parent().hide(); return false;", class: 'icon-remove' %>
-            <%= link_to "", new_note_path, remote: true, class: 'icon-plus'%>
+          <%= link_to "", "#", onclick: "$(this).parent().parent().hide(); return false;", class: 'icon-remove' %>
+          <%= link_to "", new_note_path, remote: true, class: 'icon-plus'%>
         </div>
-            <p>
-            <strong id="note_title">What is Notes?</strong></br>
-            You can user notes to create simple sticky reminder or to-do's for important items.
-            </p>            
-        </li>
+        <p>
+          <strong id="note_title">What is Notes?</strong></br>
+          You can user notes to create simple sticky reminder or to-do's for important items.
+        </p>            
+      </li>
         
-        <li id="tips">
+      <li id="tips">
         <div class="top_note">
-            <%= link_to "", "#", onclick: "$(this).parent().parent().hide(); return false;", class: 'icon-remove' %>
-            <%= link_to "", new_note_path, remote: true, class: 'icon-plus'%>
+          <%= link_to "", "#", onclick: "$(this).parent().parent().hide(); return false;", class: 'icon-remove' %>
+          <%= link_to "", new_note_path, remote: true, class: 'icon-plus'%>
         </div>
-            <p>
-            <strong id="note_title">How to use?</strong></br>
-            Click the Plus icon in the note toolbar.In the New Note window you can add Title and description.
-            Click the remove icon to remove this note.
-            </p>            
-        </li>
-        
-        
+        <p>
+          <strong id="note_title">How to use?</strong></br>
+          Click the Plus icon in the note toolbar.In the New Note window you can add Title and description.
+          Click the remove icon to remove this note.
+          </p>            
+      </li>
     <% end %>
 </ul>
 

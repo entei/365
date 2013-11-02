@@ -4,24 +4,24 @@
 </div>
 
 <div class="modal-body">
-    <p><h5 style="display: inline;">Start at: </h5><%= @event.start_at.strftime("%e %B %Y %H:%M") %></p>
-    <p><h5 style="display: inline;">End at: </h5><%= @event.end_at.strftime("%e %B %Y %H:%M") %></p>
-    <p><h5 style="display: inline;">Owner: </h5><%= "#{@owner.username} (#{@owner.email})" %></p>
-    <p><h5 style="display: inline;">Guests: </h5></p>
+  <p><h5 style="display: inline;">Start at: </h5><%= @event.start_at.strftime("%e %B %Y %H:%M") %></p>
+  <p><h5 style="display: inline;">End at: </h5><%= @event.end_at.strftime("%e %B %Y %H:%M") %></p>
+  <p><h5 style="display: inline;">Owner: </h5><%= "#{@owner.username} (#{@owner.email})" %></p>
+  <p><h5 style="display: inline;">Guests: </h5></p>
     <% @event.guests.each do |g| %>
-        <li><%="#{g.username} (#{g.email})" %></li>
+      <li><%="#{g.username} (#{g.email})" %></li>
     <% end %>
     <% if @event.description %>
-        <p> <h5>Description:</h5></p>
-        <%= @event.description %></br>
+      <p><h5>Description:</h5></p>
+      <%= @event.description %></br>
     <% end %>
 </div>
-  <div class="modal-footer">
-    <% if current_user.id == @event.user_id %>
-       <%= link_to "Edit event", edit_event_path(@event), class: "btn" %>
-       <%= link_to "Delete", @event, class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?"} %>
-     <% else %>
-        <%= link_to "I'll not go", current_user.invitations.find_by(event_id: @event.id), class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?"} %>
-     <% end %>
-    
-  </div>
+
+<div class="modal-footer">
+  <% if current_user.id == @event.user_id %>
+    <%= link_to "Edit event", edit_event_path(@event), class: "btn" %>
+    <%= link_to "Delete", @event, class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?"} %>
+  <% else %>
+    <%= link_to "I'll not go", current_user.invitations.find_by(event_id: @event.id), class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?"} %>
+    <% end %>
+</div>

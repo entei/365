@@ -1,64 +1,65 @@
 <h2>Setting <%= resource_name.to_s.humanize %></h2>
-     <%= devise_error_messages! %>
+  <%= devise_error_messages! %>
 <div class="tabbable"> <!-- Only required for left/right tabs -->
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab1" data-toggle="tab">Account</a></li>
-        <li><a href="#tab2" data-toggle="tab">Password</a></li>
-        <li><a href="#tab3" data-toggle="tab">Deactivate account</a></li>
-    </ul>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Account</a></li>
+    <li><a href="#tab2" data-toggle="tab">Password</a></li>
+    <li><a href="#tab3" data-toggle="tab">Deactivate account</a></li>
+  </ul>
         
-    <div class="tab-content">
-        <div class="tab-pane active" id="tab1">
-            <div class="form">
-                <%= form_for @user do |f| %>
-                  <div id="field"><%= f.label :username %>
-                  <%= f.text_field :username %></div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <div class="form">
+        <%= form_for @user do |f| %>
+          <div id="field"><%= f.label :username %>
+          <%= f.text_field :username %></div>
                   
-                  <div id="field"><%= f.label :nickname %>
-                  <%= f.text_field :nickname %></div>
-                  
-                  <div id="field"><%= f.label :email %>
-                  <%= f.email_field :email, :autofocus => true %></div>
-                  
-                  <div id="field"><%= f.label :time_zone_select %>
-                  <%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones, width: "364px" %></div>
-                  
-                  <div>
-                    <%= f.submit "Update", class: "btn btn-success" %>
-                    <%= link_to "Back", :back, class: "btn" %>
-                  </div>
-                <% end %>
-            </div>  
-        </div>
-    
-        <div class="tab-pane" id="tab2">
-        <div class="form">
-            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                <% end %>
-                
-                <div id="field"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></br>
-                <%= f.password_field :password, :autocomplete => "off" %></div>
-                
-                <div id="field"><%= f.label :password_confirmation %>
-                <%= f.password_field :password_confirmation %></div>
-                
-                <div id="field"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></br>
-                <%= f.password_field :current_password %></div>
-                
-                <div>
-                <%= f.submit "Update", class: "btn btn-success" %>
-                <%= link_to "Back", :back, class: "btn" %>
-                </div>
-            <% end %>
-        </div>
-        </div>
-        
-        <div class="tab-pane" id="tab3">
-            <div class="form">
-            <p>Do you want delete this account? <%= button_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete , class: "btn btn-danger"%></p>
-            </div>
-        </div>
+          <div id="field"><%= f.label :nickname %>
+          <%= f.text_field :nickname %></div>
+          
+          <div id="field"><%= f.label :email %>
+          <%= f.email_field :email, :autofocus => true %></div>
+          
+          <div id="field"><%= f.label :time_zone_select %>
+          <%= f.time_zone_select :timezone, ActiveSupport::TimeZone.us_zones, width: "364px" %></div>
+          
+          <div>
+            <%= f.submit "Update", class: "btn btn-success" %>
+            <%= link_to "Back", :back, class: "btn" %>
+          </div>
+        <% end %>
+      </div>  
     </div>
+    
+    <div class="tab-pane" id="tab2">
+      <div class="form">
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+                
+          <div id="field"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i></br>
+          <%= f.password_field :password, :autocomplete => "off" %></div>
+        
+          <div id="field"><%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %></div>
+        
+          <div id="field"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i></br>
+          <%= f.password_field :current_password %></div>
+        
+          <div>
+            <%= f.submit "Update", class: "btn btn-success" %>
+            <%= link_to "Back", :back, class: "btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+        
+    <div class="tab-pane" id="tab3">
+      <div class="form">
+        <p>Do you want delete this account? <%= button_to "Delete my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete , class: "btn btn-danger"%></p>
+      </div>
+    </div>
+    
+  </div>
 </div>

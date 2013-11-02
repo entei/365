@@ -1,103 +1,100 @@
 <div class="form">
-<%= form_for @event do |f| %>
-      <% if @event.errors.any? %>
-        <div id="error_explanation">
-          <h2><%=pluralize(@event.errors.count, "error") %> </h2>:
-          <ul>
-            <% @event.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-              <% end %>
-          </ul>
-        </div>
-      <% end %>
+  <%= form_for @event do |f| %>
+    <% if @event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%=pluralize(@event.errors.count, "error") %> </h2>:
+        <ul>
+          <% @event.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.datetimepicker').datetimepicker({ 
-                format: 'yyyy-mm-dd hh:ii',
-                autoclose: true,
-                todayBtn: true
-                });
- 
-            $('#colorpicker').colorPicker({			
-              defaultColor: 0, // index of the default color (optional)
-              columns: 13,     // number of columns (optional)  
-              color: ['#FFA877', '#40E0D0', '#9ACD32', '#FF84A2', '#B0C4DE', '#9191FF', '#FF6347', '#FFEF3C', '#5CCCCC', '#B5FF18', '#64C1FF', '#A13DD5', '#269926'], // list of colors (optional)
-              // click event - selected color is passed as arg.
-              click: function(color){$('.output').val(color);}
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $('.datetimepicker').datetimepicker({ 
+            format: 'yyyy-mm-dd hh:ii',
+            autoclose: true,
+            todayBtn: true
             });
+ 
+        $('#colorpicker').colorPicker({			
+          defaultColor: 0, // index of the default color (optional)
+          columns: 13,     // number of columns (optional)  
+          color: ['#FFA877', '#40E0D0', '#9ACD32', '#FF84A2', '#B0C4DE', '#9191FF', '#FF6347', '#FFEF3C', '#5CCCCC', '#B5FF18', '#64C1FF', '#A13DD5', '#269926'], // list of colors (optional)
+          // click event - selected color is passed as arg.
+          click: function(color){$('.output').val(color);}
+        });
             
          
-            $('#datetimepicker1').datetimepicker({
-              language: 'pt-BR',
-              format: 'yyyy-MM-dd hh:mm:ss'
-            });
+        $('#datetimepicker1').datetimepicker({
+          language: 'pt-BR',
+          format: 'yyyy-MM-dd hh:mm:ss'
+        });
             
-            $('#datetimepicker2').datetimepicker({
-              language: 'pt-BR',
-              format: 'yyyy-MM-dd hh:mm:ss'
-            });
+        $('#datetimepicker2').datetimepicker({
+          language: 'pt-BR',
+          format: 'yyyy-MM-dd hh:mm:ss'
         });
-    </script>
+        
+      });
+  </script>
 
-    <div id="field">
-    	<%= f.label :name %>
-    	<%= f.text_field :name %>
-    </div>
+  <div id="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
     
-    <div id="field">
-      <div id="datetimepicker1" class="input-append date">
-        	<%= f.label :start_at %>
-        	<%= f.text_field :start_at, :value => @start_at, :readonly => true  %>
-        <span class="add-on">
-          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-          </i>
-        </span>
-      </div>
+  <div id="field">
+    <div id="datetimepicker1" class="input-append date">
+      <%= f.label :start_at %>
+      <%= f.text_field :start_at, :value => @start_at, :readonly => true  %>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
     </div>
+  </div>
     
-    <div id="field">
-      <div id="datetimepicker2" class="input-append date">
-        	<%= f.label :end_at %>
-        	<%= f.text_field :end_at, :value => @end_at, :readonly => true %>
-        <span class="add-on">
-          <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-          </i>
-        </span>
-      </div>
+  <div id="field">
+    <div id="datetimepicker2" class="input-append date">
+      <%= f.label :end_at %>
+      <%= f.text_field :end_at, :value => @end_at, :readonly => true %>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+      </span>
     </div>
+  </div>
     
-    <div id="field">
-        <%= f.label :color %>
-        <%= f.hidden_field :color, class: "output" %>
-    </div> 
-    <div id="colorpicker" style="width: 220px;">
-        <div class="jColorSelect" style="width: 220px;">
-        </div>
-    </div>
-    </br>
+  <div id="field">
+    <%= f.label :color %>
+    <%= f.hidden_field :color, class: "output" %>
+  </div>
+  
+  <div id="colorpicker" style="width: 220px;">
+    <div class="jColorSelect" style="width: 220px;"></div>
+  </div>< / br>
     
-    <script>
-    // tags input don't work after render this template within this script %)
-        $('#emails').tagsinput({
-            maxTags: 56
-        });
-    </script>
+  <script>
+  // tags input don't work after render this template within this script %)
+    $('#emails').tagsinput({
+         maxTags: 56
+     });
+  </script>
 
-   <%= fields_for :guests do |builder| %>
-        <%= builder.label "Add guests email" %>
-        <%= builder.text_field :email, id: "emails", data: {role: "tagsinput"}, value: @guests_emails %>
-    <% end %>
+  <%= fields_for :guests do |builder| %>
+    <%= builder.label "Add guests email" %>
+    <%= builder.text_field :email, id: "emails", data: {role: "tagsinput"}, value: @guests_emails %>
+  <% end %>
     
-    <div id="field">
-    	<%= f.label :description %>
-    	<%= f.text_area :description, cols: 20, rows: 10, resize: false, placeholder: "Enter a description" %>
-    </div>
+  <div id="field">
+  	<%= f.label :description %>
+   	<%= f.text_area :description, cols: 20, rows: 10, resize: false, placeholder: "Enter a description" %>
+  </div>< / br>
     
-    </br>
-    <div class="inline">
-      <%= link_to "Back", calendar_path , class: "btn" %>
-      <%= f.submit class: "btn btn-primary" %>
-    </div>
+  <div class="inline">
+    <%= link_to "Back", calendar_path , class: "btn" %>
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
 <% end %>
 </div>

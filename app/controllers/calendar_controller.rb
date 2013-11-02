@@ -13,7 +13,6 @@ class CalendarController < ApplicationController
     events = current_user.events.event_strips_for_month(@shown_month, @first_day_of_week) 
     shared_events = current_user.shared_events.event_strips_for_month(@shown_month, @first_day_of_week) 
     @event_strips = events + shared_events
-    
   end
 
   private 

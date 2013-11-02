@@ -5,8 +5,8 @@ class NotesController < ApplicationController
   layout 'dashboard'
 
   def index 
-      @notes = current_user.notes.order('created_at DESC').limit(21)
-      @note = current_user.notes.new
+    @notes = current_user.notes.order('created_at DESC').limit(21)
+    @note = current_user.notes.new
   end
   
   def new
@@ -18,13 +18,13 @@ class NotesController < ApplicationController
     
     respond_to do |format| 
       if @note.save
-          format.html { redirect_to notes_path, notice: "Note was successfully created." }
-          format.json { @note }
-          format.js {}
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @note.errors, status: :unprocessable_entity }
-          format.js {}
+        format.html { redirect_to notes_path, notice: "Note was successfully created." }
+        format.json { @note }
+        format.js {}
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @note.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -33,26 +33,26 @@ class NotesController < ApplicationController
   end
   
   def update
-      respond_to do |format|
+    respond_to do |format|
       if @note.update(note_params)
-          format.html { redirect_to notes_path, notice: "Note was successfully created." }
-          format.json { @note }
+        format.html { redirect_to notes_path, notice: "Note was successfully created." }
+        format.json { @note }
       else
-         format.html { render action: 'edit' }
-         format.json { render json: @note.errors, status: :unprocessable_entity }
+        format.html { render action: 'edit' }
+        format.json { render json: @note.errors, status: :unprocessable_entity }
       end
-  end
+    end
   end
 
 
 
   def destroy
-      @note.destroy
-        respond_to do |format|
-          format.html { redirect_to notes_path }
-          format.json { head :no_content }
-          format.js
-        end
+    @note.destroy
+      respond_to do |format|
+        format.html { redirect_to notes_path }
+        format.json { head :no_content }
+        format.js
+      end
   end
 
   def show
@@ -60,11 +60,11 @@ class NotesController < ApplicationController
   
   private 
   
-    def set_note
-        @note = current_user.notes.find(params[:id])
-    end
+  def set_note
+    @note = current_user.notes.find(params[:id])
+  end
     
-    def note_params
-        params.require(:note).permit!
-    end
+  def note_params
+    params.require(:note).permit!
+  end
 end
