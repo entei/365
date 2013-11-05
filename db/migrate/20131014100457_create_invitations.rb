@@ -1,10 +1,8 @@
 class CreateInvitations < ActiveRecord::Migration
   def change
     create_table :invitations do |t|
-      t.string :event_id
-      t.string :integer
-      t.string :guest_id
-      t.string :integer
+      t.integer :event_id
+      t.integer :guest_id
 
       t.timestamps
     end
