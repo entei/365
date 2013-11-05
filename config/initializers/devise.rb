@@ -6,14 +6,12 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   config.secret_key = '5ce77a8dca7328d2269e9e9552a313ae1552219e35c8ec8cd33bfe513b1f6c75cdfe47672c2113f00a8f88e1a9d5f769ce62757f2fce03fea7865aab0e37e558'
+  #OAUTH_CREDENTIALS_PATH = "#{Rails.root}/config/oauth.yml"
+  #OAUTH_CREDENTIALS = YAML.load_file(OAUTH_CREDENTIALS_PATH)[Rails.env]
 
- #OAUTH_CREDENTIALS_PATH = "#{ENV['HOME']}/config/oauth.yml"
-  OAUTH_CREDENTIALS_PATH = "#{Rails.root}/config/oauth.yml"
-  OAUTH_CREDENTIALS = YAML.load_file(OAUTH_CREDENTIALS_PATH)[Rails.env]
-
-  config.omniauth :vkontakte, OAUTH_CREDENTIALS['vkontakte']['app_id'], OAUTH_CREDENTIALS['vkontakte']['app_secret']
-  config.omniauth :facebook, OAUTH_CREDENTIALS['facebook']['app_id'], OAUTH_CREDENTIALS['facebook']['app_secret']
-  
+  #config.omniauth :vkontakte, OAUTH_CREDENTIALS['vkontakte']['app_id'], OAUTH_CREDENTIALS['vkontakte']['app_secret']
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
+ 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
