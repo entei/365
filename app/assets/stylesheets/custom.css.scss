@@ -3,9 +3,10 @@
 
 /* universal */
 body {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 16px;
   line-height: 18px;
+  font: normal normal 400 16px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #47535d;
 }
 
 #error_explanation {
@@ -21,7 +22,10 @@ body {
 } 
 
 h1 {
-    text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0px 2px 2px #ccc, 0px 4px 4px #ccc,0px 6px 6px #ccc;
+  margin: 0 0 40px;
+  font-size: 42px;
+  line-height: 42px;
+  font-weight: 700;
 }
 
 a {
@@ -33,7 +37,6 @@ a {
     text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0px 2px 2px #ccc, 0px 4px 4px #ccc,0px 6px 6px #ccc;
     font-style: italic;
     //font-family: 'Asap', sans-serif;
-    float: left;
     display: block;
     padding: 10px 20px 10px;
     margin-left: -20px;
@@ -48,10 +51,6 @@ a {
       color: none;
       text-decoration: none;
   }
-}
-
-.app {
-    float: right;
 }
 
 .brand {
@@ -102,6 +101,10 @@ body {
     padding-top: 60px;
 }
 
+.well {
+  background-color: #f3f5f7;
+}
+
 .form-signin {
 	max-width: 300px;
 	padding: 19px 29px 29px;
@@ -131,11 +134,7 @@ body {
 }
 
 .new-event {
-    padding-left: 1px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
 	color: #ffffff;
-	padding: 10px 20px;
 	background: -moz-linear-gradient(
 		top,
 		#6fb9f2 0%,
@@ -166,9 +165,8 @@ body {
 }
 
 .signup-btn {
-    width: 60px;
+  text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 20px;
 	color: #ffffff;
 	padding: 10px 20px;
 	background: -moz-linear-gradient(
@@ -200,10 +198,7 @@ body {
 	
 }
 
-.signup {
-    margin-left: 100px;   
-}
-
+/* home page */
 #signup {
    float: left;
    span {
@@ -215,20 +210,28 @@ body {
     margin-top: 20px;
 }
 
-.app {
-    float: right;
-    display: inline;
-}
-
 #app-iphone {
-    margin-left: -540px;
-    margin-bottom: -100px;
+    margin-top: -230px;
 }
 
-#center {
-	text-align: center;
+.app {
+  padding-left: 70px; 
 }
 
+.signup {
+  padding-left: 60px;
+}
+
+.row.media {
+  text-align: center;
+  img {
+    display:block; 
+    margin:0 auto;
+    &:hover {
+      opacity:0.4;
+    }
+  }
+}
 .jColorSelect {
     width: 210px;
     -moz-border-radius: 4px;

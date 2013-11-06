@@ -41,7 +41,7 @@ class UsersController < ApplicationController
         format.html { redirect_to edit_registration_path(@user), notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { redirect_to edit_registration_path(@user)}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

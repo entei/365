@@ -3,40 +3,39 @@
     <div class="row-fluid">
     
       <div class="span4 signup">
-        <div id="signup">
+      
           <h1 class="logo">365days</h1>
-            <p><span>your personal calendar</span></p>
+            <p style="font-size: 28px;">your personal calendar</p>
             <div class="button_row">
-              <%= link_to "Get started", new_user_registration_path, class: "btn-large signup-btn" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "btn-large signup-btn" %>
             </div>
-        </div>
+       
       </div>
       <div class="span6 app">
-        <div>
-          <%= image_tag('macbook-air-365.png', width: "520px", id: "app-macbook")%>
-          <%= image_tag('iphone-365.png', width: "120px", id: "app-iphone")%>
-        </div>
+          <%= image_tag('app-365.png')%>
       </div>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-text="365days - you personal calendar" data-via="expsk" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
   </div>
 </div>
 
-<div id="center">
-</div>
-
 <div class="container">
-  <div class="row">
+  <div class="row media">
     <div class="span4">
+      <p><%= image_tag('calendar_blue.png') %></p>
       <h2>Create events</h2>
       <p>Remember Birthdays.</p>
     </div>
     <div class="span4">
-      <h2>Make shared events</h2>
-      <p>Share your events to other peoples. </p>
+      <%= image_tag('users_blue.png') %>
+      <h2>Shared events</h2>
+      <p>Invite peoples to your events.</p>
    </div>
     <div class="span4">
+      <%= image_tag('note_blue.png') %>
       <h2>Sticky notes</h2>
-      <p>Make quick notes and to-do list.</p>
+      <p>Make quick notes and to-do lists.</p>
     </div>
   </div>
 </div>
