@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Dear Mr./Ms. </p>
+	<p>
+		<%= @user.username.capitalize %> would like to invite you to attend the <%= @event.name %>
+	  on <%= @event.start_at.strftime("%B %e %Y") %> at <%= @event.start_at.strftime("%H:%M") %> .
+	 </p>
+	<p>
+		<%= link_to "Sign Up", @url %> now to attend the event.    
+		It is our great honor to have you as out client. 
+    </p>
+    <p>Thanks for joining and have a great day!</p></br>
+    <p>Best regards, My365days </p>
+  </body>
+</html>
