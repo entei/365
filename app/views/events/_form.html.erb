@@ -22,7 +22,7 @@
         $('#colorpicker').colorPicker({			
           defaultColor: 0, // index of the default color (optional)
           columns: 13,     // number of columns (optional)  
-          color: ['#FFA877', '#40E0D0', '#9ACD32', '#FF84A2', '#B0C4DE', '#9191FF', '#FF6347', '#FFEF3C', '#5CCCCC', '#B5FF18', '#64C1FF', '#A13DD5', '#269926'], // list of colors (optional)
+          color: ['#DE8AE6', '#89E4DD', '#93E2B0', '#FDB7C8', '#B0C4DE', '#9191FF', '#FFD57B', '#F0F089', '#5CCCCC', '#C0EC63', '#64C1FF', '#CD86F1', '#91E691'], // list of colors (optional)
           // click event - selected color is passed as arg.
           click: function(color){$('.output').val(color);}
         });
@@ -93,8 +93,8 @@
   </div></br>
     
   <div class="inline">
-    <%= link_to "Back", calendar_path , class: "btn" %>
-    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to "Back", calendar_path , class: "butt" %>
+    <%= f.submit class: "butt blue" %>
   </div>
 <% end %>
 </div>

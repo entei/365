@@ -78,7 +78,7 @@ class EventsController < ApplicationController
        g_arr << user unless user == current_user
       else
         p "User with email #{e} not found"
-        # Tell the UserMailer to send a invite after save
+        # Tell the UserMailer to send a invite
         UserMailer.invitation_email(e, current_user, @event).deliver
       end
     end

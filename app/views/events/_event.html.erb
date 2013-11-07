@@ -19,9 +19,9 @@
 
 <div class="modal-footer">
   <% if current_user.id == @event.user_id %>
-    <%= link_to "Edit event", edit_event_path(@event), class: "btn" %>
-    <%= link_to "Delete", @event, class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?"} %>
+    <%= link_to "Edit event", edit_event_path(@event), class: "butt blue" %>
+    <%= link_to "Delete", @event, class: 'butt red', method: :delete, data: { confirm: "Are you sure?"} %>
   <% else %>
-    <%= link_to "I'll not go", current_user.invitations.find_by(event_id: @event.id), class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?"} %>
+    <%= link_to "I'll not go", current_user.invitations.find_by(event_id: @event.id), class: 'butt red', method: :delete, data: { confirm: "Are you sure?"} %>
     <% end %>
 </div>

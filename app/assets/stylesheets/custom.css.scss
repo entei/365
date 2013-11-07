@@ -10,6 +10,47 @@ body {
   color: #47535d;
 }
 
+h1 {
+  margin: 0 0 40px;
+  font-size: 42px;
+  line-height: 42px;
+  font-weight: 700;
+}
+
+a {
+    color: #333333;
+}
+
+.nav > li > a:hover {
+  color: #ffffff;
+  background-color: #53B7E9;
+  border-radius: 4px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+body { 
+    font: normal 80% "calluna", Georgia, "Times New Roman", serif;
+    length: 600px;
+    padding-top: 60px;
+}
+
+p, ol, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
 #error_explanation {
   @extend .alert;
   @extend .alert-error;
@@ -21,17 +62,6 @@ body {
     @extend .error;
     display: inline;
 } 
-
-h1 {
-  margin: 0 0 40px;
-  font-size: 42px;
-  line-height: 42px;
-  font-weight: 700;
-}
-
-a {
-    color: #333333;
-}
 
 .logo {
     text-transform: uppercase;
@@ -59,25 +89,16 @@ a {
     color: #fff;
 }
 
+.box {
+
+}
+
 .event_form {
     padding-left: 200px;
 }
 
 .user_form {
   margin: 0 auto 20px;
-
-}
-
-p, ol, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
 }
 
 .gravatar {
@@ -87,19 +108,6 @@ pre {
   -moz-box-shadow: 3px 3px 6px #ccc;
   -webkit-box-shadow: 3px 3px 6px #ccc;
   box-shadow: 3px 3px 6px #ccc;
-}
-
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-body { 
-    font: normal 80% "calluna", Georgia, "Times New Roman", serif;
-    length: 600px;
-    padding-top: 60px;
 }
 
 .form-signin {
@@ -128,74 +136,55 @@ body {
     background: #66CCFF;
 }
 
+/*flat buttons*/
+.butt {
+  color: #ffffff;
+  background-color: #D1D1D1;
+  border: none;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.4;
+  border-radius: 4px;
+  padding: 10px 15px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transition: 0.25s linear;
+  transition: 0.25s linear;
+
+  &:hover {
+    color: #ffffff;
+    opacity: 0.6;
+    text-decoration: none;
+  }
+
+  &.blue {
+    background-color: #53B7E9;
+  }
+  &.red {
+    background-color: #D43F3A;
+  }
+  &.green {
+    background-color: #398439;
+  }
+  &.primary {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    padding: 10px 20px;
+  }
+}
+
+input.butt {
+  padding-top: 7px;
+  height: 37px;
+}
+
+input {
+  margin-bottom: 4px;
+}
+
 .btn-event {
 	background-color: #66CCFF;
 	text-align: center;
-}
-
-.new-event {
-	color: #ffffff;
-	background: -moz-linear-gradient(
-		top,
-		#6fb9f2 0%,
-		#3491ed);
-	background: -webkit-gradient(
-		linear, left top, left bottom, 
-		from(#6fb9f2),
-		to(#3491ed));
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	border: 0px solid #1183f5;
-	-moz-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 1px rgba(255,255,255,0.5);
-	-webkit-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 1px rgba(255,255,255,0.5);
-	box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 1px rgba(255,255,255,0.5);
-
-	&:hover{
-	 color: none;
-	 text-decoration: none;	    
-	}
-	
-}
-
-.signup-btn {
-  text-transform: uppercase;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #ffffff;
-	padding: 10px 20px;
-	background: -moz-linear-gradient(
-		top,
-		#6fb9f2 0%,
-		#3491ed);
-	background: -webkit-gradient(
-		linear, left top, left bottom, 
-		from(#6fb9f2),
-		to(#3491ed));
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	border: 0px solid #1183f5;
-	-moz-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 1px rgba(255,255,255,0.5);
-	-webkit-box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 1px rgba(255,255,255,0.5);
-	box-shadow:
-		0px 1px 3px rgba(000,000,000,0.5),
-		inset 0px 0px 1px rgba(255,255,255,0.5);
-
-	&:hover{
-	 color: none;
-	 text-decoration: none;	    
-	}
-	
 }
 
 /* home page */

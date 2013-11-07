@@ -35,11 +35,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   $.fn.colorPicker = function($$options) {
     // Defaults
     var $defaults = {
-      color:new Array(
-	"#FFFFFF", "#EEEEEE", "#FFFF88", "#FF7400", "#CDEB8B", "#6BBA70",
-	"#006E2E", "#C3D9FF", "#4096EE", "#356AA0", "#FF0096", "#B02B2C", 
-	"#000000"
+      color:new Array('#DE8AE6',
+       '#89E4DD', '#93E2B0', '#FDB7C8',
+        '#B0C4DE', '#9191FF', '#EBAC8F', '#FFEF3C',
+         '#5CCCCC', '#C0EC63', '#64C1FF', '#A13DD5', '#269926'
 	),
+
+
       defaultColor: 0,
       columns: 0,
       click: function($color){}

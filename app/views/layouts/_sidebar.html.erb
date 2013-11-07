@@ -18,14 +18,7 @@
         <li><%= link_to "#{e.name}", e, remote: true, id: e.id %></li>
       <% end %>
     </ul>
-  </div><!--/.well -->
-    
-  <% if params[:controller] == 'calendar' %>
-    <div id="center">
-      <%= link_to "New event", new_event_path, class: "new-event pull-left" %>
-    </div>
-  <% end %>
-  
+  </div><!--/.well --> 
 </div><!--/span-->
 
 <div id="event_form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
