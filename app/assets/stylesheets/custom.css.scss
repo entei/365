@@ -3,6 +3,7 @@
 
 /* universal */
 body {
+  padding-top: 0;
   font-size: 16px;
   line-height: 18px;
   font: normal normal 400 16px/1.5 "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -101,15 +102,11 @@ body {
     padding-top: 60px;
 }
 
-.well {
-  background-color: #f3f5f7;
-}
-
 .form-signin {
 	max-width: 300px;
 	padding: 19px 29px 29px;
 	margin: 0 auto 20px;
-	background-color: #fff;
+	background-color: #f3f5f7;
 	border: 1px solid #e5e5e5;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -125,7 +122,10 @@ body {
 }
 
 .home {
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: 100%;
+    background: #66CCFF;
 }
 
 .btn-event {

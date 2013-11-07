@@ -72,6 +72,18 @@ EventCAlendar::Application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+  config.action_mailer.default_url_options = { :host => 'my365days.heroku.com' }
+  
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.mandrillapp.com',
+      port:                 587,
+      domain:               'my365days.herokuapp.com',
+      user_name:            ENV['NOTIF_EMAIL'],
+      password:             ENV['NOTIF_PASS'],
+      authentication:       'plain',
+      enable_starttls_auto: true  
+  }
+
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
