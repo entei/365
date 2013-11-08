@@ -7,10 +7,6 @@ body.dashboard {
     background-image: url(wood_planks2.jpg);
     }
 ul {
-    .note {
-        color: red;
-        background-color: #EE3E13;
-    }
 }
 
 strong#note_title {
@@ -23,6 +19,7 @@ ul.note{
       color: #000;
       background: #ffc;
       display: block;
+      word-wrap: break-word;
       
       height: auto;
       width: 15em;
