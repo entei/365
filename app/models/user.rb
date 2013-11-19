@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
          :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook, :vkontakte]
-   
+  
   # Find facebook user by her page url or create new
   def self.find_for_facebook_oauth access_token
     if user = User.where(:url => access_token.info.urls.Facebook).first
@@ -69,31 +69,25 @@ class User < ActiveRecord::Base
   
   # Upcoming events
   def upcmng_e
-    self.events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3) +
-    self.shared_events.where("end_at > ?", Time.zone.now).order("start_at ASC").first(3)
+    self.events.left(Time.now.in_time_zone(self.timezone)).order("start_at ASC").first(3) +
+    self.shared_events.left(Time.now.in_time_zone(self.timezone)).order("start_at ASC").first(3)
   end
   
   # Today owner events 
   def today_events
-    today = Time.current.in_time_zone(self.timezone)
-    end_of_today = Time.current.end_of_day.in_time_zone(self.timezone)
-    self.events.where("end_at >= ? AND start_at < ?", today, end_of_today)
+    self.events.today(Time.current.in_time_zone(self.timezone), Time.current.end_of_day.in_time_zone(self.timezone))
   end
    
   def today_shared_events
-    today = Time.current.in_time_zone(self.timezone)
-    end_of_today = Time.current.end_of_day.in_time_zone(self.timezone)
-    self.shared_events.where("end_at >= ? AND start_at < ?", today, end_of_today)
+    self.shared_events.today(Time.current.in_time_zone(self.timezone), Time.current.end_of_day.in_time_zone(self.timezone))
   end
   
   # Left events
   def events_left
-    cur_time = Time.now.in_time_zone(self.timezone)
-    self.events.where("end_at > ?", cur_time)
+    self.events.left(Time.now.in_time_zone(self.timezone))
   end
    
   def shared_events_left
-    cur_time = Time.now.in_time_zone(self.timezone)
-    self.shared_events.where("end_at > ?", cur_time)
+    self.shared_events.left(Time.now.in_time_zone(self.timezone))
   end
 end

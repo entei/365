@@ -28,6 +28,9 @@ class Event < ActiveRecord::Base
   validates :user_id, presence: true
   validate :check_date
 
+  scope :today, ->(now, day_end) { where("end_at >= ? AND start_at < ?", now, day_end) }
+  scope :left, ->(now) { where("end_at > ?", now)}
+
   # change event bg color
   def change_color
     self.color || 'rgb(12, 124, 231)'

@@ -93,7 +93,7 @@
         </div>
     </div>
   <% if current_user &&  params[:controller] != 'static_pages' %>             
-    <div class="container">
+    <div class="container-fluid">
       <div class="row-fluid">
         <div class="span9">
           <div class="well">
@@ -106,7 +106,7 @@
       </div><!-- /row-fluid -->
     </div><!-- /container -->   
   <% else %>
-    <div class="container">
+    <div class="container-fluid">
       <%= bootstrap_flash %>
       <%= yield %>
     </div>
