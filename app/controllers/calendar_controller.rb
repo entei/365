@@ -15,14 +15,4 @@ class CalendarController < ApplicationController
     @event_strips = events + shared_events
   end
 
-  private 
-  
-  # change bg color for past events
-  # ???????????
-  def past_events_color
-    past_e_color = '#D8D8D8'
-    events = current_user.events.where('end_at < ? AND color != ? ', Time.current, past_e_color)
-    events.each { |e| e.update_attributes(color: past_e_color) }
-  end
-  
 end
